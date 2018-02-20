@@ -1,17 +1,17 @@
-<meta charset="utf-8">
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+
+
+   <title></title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    
-    <link href="{{asset("bower_components/MDBootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
 
-    <!-- Material Design Bootstrap -->
-    <link href="{{asset("bower_components/MDBootstrap/css/mdb.min.css")}}" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="{{asset("bower_components/MDBootstrap/css/style.css")}}" rel="stylesheet">
-    
-<body class="hidden-sn mdb-skin">
                 
