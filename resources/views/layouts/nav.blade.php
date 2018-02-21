@@ -15,7 +15,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar">
+            <div class="col-md-12 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar">
                 <div class="list-group panel">
                     <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-question-circle"></i> <span class="hidden-sm-down">My Profile</span> </a>
                     <div class="collapse" id="menu1">
