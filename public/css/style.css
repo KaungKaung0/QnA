@@ -4,27 +4,40 @@
 #rightnavone{
 	float: right;
 }
-#topQ{
-	width: 100%;
-	background: purple;
+#content1{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding-left: 5px;
+	background-color: white;
+	box-shadow: 2px 2px;
+	border-radius: 2px;
+
 }
-#topQ .top_q p{
-	color: red;
+
+#content2{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding-left: 5px;
+	background-color: white;
+	box-shadow: 2px 2px;
+	border-radius: 2px;
 }
-#topQ .top_q{
-	width: 80%;
-	float: middle;
-	margin: 10 10 10 10px;
-	background: skyblue;
+
+#box{
+	background-color: #9E9E9E;
+	border-radius: 2px;
+	box-shadow: 0 0px 0px 0 black, 0 0px 2px 0 black;
 }
-#topQ .top_q .top_q_que{
-	margin: 10 10 10 10px;
-	background: green;
+
+#nyan_sin1{
+	margin-top: 10px;
+	height: 0.5px;
+	border-radius: 5px;
 }
-#topQ .top_q .top_q_ans{
-	margin: 10 10 10 10px;
-	background: yellow;
+#nyan_sin2{
+	height: 2px;
+	border-radius: 5px;
 }
-.width_change{
-	width: 50px;
-}
+
