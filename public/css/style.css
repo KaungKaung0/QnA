@@ -1,0 +1,27 @@
+#leftnavone{
+	float: left;
+}
+#rightnavone{
+	float: right;
+}
+#topQ{
+	width: 100%;
+	background: purple;
+}
+#topQ .top_q p{
+	color: red;
+}
+#topQ .top_q{
+	width: 80%;
+	float: middle;
+	margin: 10 10 10 10px;
+	background: skyblue;
+}
+#topQ .top_q .top_q_que{
+	margin: 10 10 10 10px;
+	background: green;
+}
+#topQ .top_q .top_q_ans{
+	margin: 10 10 10 10px;
+	background: yellow;
+}
