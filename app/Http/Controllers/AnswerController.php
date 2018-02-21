@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
-use App\Answer;
 
-class QuestionController extends Controller
+class AnswerController extends Controller
 {
 
     public function __construct()
@@ -20,17 +19,6 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        
-        
-        $blocks = [
-            'name'  => \Auth::user()->name,
-            'private_key' => \Auth::user()->private_key,
-            'public_key'  => \Auth::user()->public_key,
-            'question' => question::where('Q_id' , '1')->first()->question       
-        ];
-        // $blocks = (object) $block;
-
-        return view('question')->with('blocks' , $blocks);
         //
     }
 

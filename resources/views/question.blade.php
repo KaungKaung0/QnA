@@ -2,13 +2,17 @@
 
 @section('main')
 	<table class="table">
+	
   <thead>
 	<tr>
-		<th>{{$user}}</th>
+		<th>{{ $blocks['question'] }}</th>
+		
 	</tr>
+	 
   </thead>
   <tbody>
    
   </tbody>
+ 
 </table>
 @endsection
