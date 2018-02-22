@@ -4,25 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Answer extends Model
 {
     //
-
     protected $fillable = [
-    	'question', 'q_id'
+    	'answer', 'q_id' , 'user_id' , 'private_key' , 'public_key'
     ];
 
     protected $hidden = [
-    	'q_id'
+    	'q_id' 
     ];
 
     public function user()
     {
         	return $this->hasOne('App\User');
     }
-
-    public function answer()
+    public function question()
     {
-        return $this->hasMany('App\Answer');
+    	return $this->belongsTo('App\Question');
     }
 }
