@@ -9,7 +9,7 @@
             <a class="navbar-brand" href="#">
 
                 <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-                May Chin Tar May Mad Abay
+                May Kyi
             </a>
         </div>
     </div>
