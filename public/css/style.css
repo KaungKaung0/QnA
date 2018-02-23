@@ -6,6 +6,9 @@
 #header_profile h1{
 	font-family: 'Ubuntu', sans-serif;
 }
+#header_aboutus h1{
+	font-family: 'Ubuntu', sans-serif;
+}
 
 #secondheader_profile h1{
 	font-family: 'Ubuntu', sans-serif;
@@ -132,12 +135,16 @@
 .link_color{
 	color: red;
 }
-
+#box h1{
+	padding-left: 10px;
+	font-family: 'Ubuntu', sans-serif;
+}
+#content1 p{
+	padding: 10px;
+}
 .button-official{
 	width: 200px;
 	background-color: white;
 	color: black;
 	border-radius: 0px;
 }
-
-
