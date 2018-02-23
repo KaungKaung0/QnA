@@ -3,7 +3,8 @@
 @section('main')
 <div class="container">
 	<div id="header_welcome">
-		<h1>Top rated questions</h1>
+	<br>
+		<h1><i class="fa fa-star"></i>   Top rated questions</h1>
 	</div>
 	<div class="row">
 

@@ -18,6 +18,6 @@ Route::get('/', 'MainController@index');
 Route::resource('questions' , 'QuestionController');
 Route::resource('answer' , 'AnswerController');
 Route::resource('profile', 'ProfileController');
-
+Route::resource('aboutus', 'AboutusContoller');
 
 
