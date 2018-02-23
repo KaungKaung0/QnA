@@ -12,15 +12,15 @@
 */
 Auth::routes();
 
-Route::get('/home', 'MainController@index');
-Route::get('/', 'MainController@index');
+Route::get('/home', 'MainController@index') -> name('main');
+Route::get('/', 'MainController@index') -> name('main');
 
-Route::resource('main' , 'MainController');
-Route::resource('questions' , 'QuestionController');
+Route::get('/main' , 'MainController@index')-> name('main');
+Route::resource('questions' , 'QuestionController') ;
 Route::resource('answers' , 'AnswerController');
-Route::resource('profile', 'ProfileController');
-Route::resource('aboutus', 'AboutusContoller');
+Route::get('/profile', 'ProfileController@index')-> name('profile');
 
+Route::get('/aboutus', 'AboutusController@index') -> name('aboutus');
 Route::get('logout', 'MainController@logout' );
 
 

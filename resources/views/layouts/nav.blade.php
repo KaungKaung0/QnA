@@ -17,10 +17,10 @@
         <div class="row">
             <div class="col-md-12 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar">
                 <div class="list-group panel">
-                    <a href="#menu1" class="list-group-item collapsed font-color" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-home"></i> <span class="hidden-sm-down">Home</span> </a>
-                    <a href="#" class="list-group-item collapsed font-color" data-parent="#sidebar"><i class="fa fa-user"></i><span class="hidden-sm-down">My Profile</span></a>
+                    <a class="list-group-item collapsed font-color" href="{{ route('main') }}"><i class="fa fa-home"></i> <span class="hidden-sm-down">Home</span> </a>
+                    <a class="list-group-item collapsed font-color" href="{{ route('profile') }}"></i><span class="hidden-sm-down">My Profile</span></a>
 
-                    <a href="#menu3" class="list-group-item collapsed font-color" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-code"></i> <span class="hidden-sm-down">Developer Portfolio</span></a>
+                    <a class="list-group-item collapsed font-color"  href="{{ route('aboutus') }}"><i class="fa fa-code"></i> <span class="hidden-sm-down">Developer Portfolio</span></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
                         <button type="submit" class="btn button-official">Logout</button>
