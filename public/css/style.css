@@ -1,3 +1,20 @@
+
+
+#header_welcome h1{
+	font-family: 'Ubuntu', sans-serif;
+}
+#header_profile h1{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#secondheader_profile h1{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#content1{
+	font-family: 'Ubuntu', sans-serif;
+}
+
 #leftnavone{
 	float: left;
 }
@@ -101,3 +118,26 @@
 .active{
 	background-color: red;
 }
+
+.login_color{
+	background-color: #009688;
+}
+
+#login_shadow{
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 100px;
+}
+
+.link_color{
+	color: red;
+}
+
+.button-official{
+	width: 200px;
+	background-color: white;
+	color: black;
+	border-radius: 0px;
+}
+
+

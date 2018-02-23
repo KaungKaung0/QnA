@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Question;
 use App\Answer;
 
+
+
 class QuestionController extends Controller
 {
 
@@ -21,18 +23,12 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $q= Question::where('Q_id' , \Auth::user()->public_key )->paginate('5');
-        
-        $blocks = [
-            'name'  => \Auth::user()->name,
-            'private_key' => \Auth::user()->private_key,
-            'public_key'  => \Auth::user()->public_key,
-            'question' => question::where('Q_id' , \Auth::user()->public_key )->first()->public_key     
-        ];
-        // $blocks = (object) $block;
+        $user = \Auth::user()->first()->public_key;
 
-        return view('question')->with('blocks' , [$blocks , $q]);
-        //
+        $a = Answer::get();
+        $q = Question::paginate('5');
+
+        return view('question');
     }
 
     /**
@@ -113,3 +109,5 @@ class QuestionController extends Controller
         //
     }
 }
+
+

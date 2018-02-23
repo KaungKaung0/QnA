@@ -13,11 +13,18 @@
 Auth::routes();
 
 Route::get('/home', 'MainController@index');
-Route::resource('main' , 'MainController');
 Route::get('/', 'MainController@index');
+
+Route::resource('main' , 'MainController');
 Route::resource('questions' , 'QuestionController');
 Route::resource('answers' , 'AnswerController');
+Route::resource('profile', 'ProfileController');
+Route::resource('aboutus', 'AboutusContoller');
+
 Route::get('logout', 'MainController@logout' );
+
+
+
 
 
 

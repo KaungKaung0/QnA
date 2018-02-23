@@ -21,9 +21,7 @@ class AnswerController extends Controller
     public function index()
     {
         //
-        $q = 1;
-        $answer = Answer::where('q_id' , $q)->first();
-        dd($answer);
+       
     }
 
     /**
