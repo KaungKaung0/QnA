@@ -7,6 +7,15 @@ use App\Question;
 use App\Answer;
 
 class QuestionController extends Controller
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Question;
+use App\Answer;
+
+class QuestionController extends Controller
 {
 
     // public function __construct()
@@ -22,29 +31,16 @@ class QuestionController extends Controller
     {
         $q= Question::where('Q_id' , \Auth::user()->public_key )->paginate('5');
         
-<<<<<<< HEAD
-        // $blocks = [
-        //     'name'  => \Auth::user()->name,
-        //     'private_key' => \Auth::user()->private_key,
-        //     'public_key'  => \Auth::user()->public_key,
-        //     'question' => question::where('Q_id' , '1')->first()->question       
-        // ];
-        // $blocks = (object) $block;
 
-        // return view('question')->with('blocks' , $blocks);
-=======
         $blocks = [
-            'name'  => \Auth::user()->name,
-            'private_key' => \Auth::user()->private_key,
-            'public_key'  => \Auth::user()->public_key,
-            'question' => question::where('Q_id' , \Auth::user()->public_key )->first()->question       
-        ];
-        // $blocks = (object) $block;
+             'name'  => \Auth::user()->name,
+             'private_key' => \Auth::user()->private_key,
+             'public_key'  => \Auth::user()->public_key,
+             'question' => question::where('Q_id' , '1')->first()->question       
+         ];
+         //$blocks = (object) $block;
 
-        return view('question')->with('blocks' , [$blocks , $q]);
->>>>>>> d61cdc8a4d09ff4147168ea8dd54f864251e3f19
-        //
-        return view ('question');
+         return view('question') -> with('blocks', [$blocks, $q])
     }
 
     /**
@@ -123,3 +119,5 @@ class QuestionController extends Controller
         //
     }
 }
+
+
