@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Question;
 use App\Answer;
 
@@ -26,7 +27,7 @@ class QuestionController extends Controller
             'name'  => \Auth::user()->name,
             'private_key' => \Auth::user()->private_key,
             'public_key'  => \Auth::user()->public_key,
-            'question' => question::where('Q_id' , \Auth::user()->public_key )->first()->question       
+            'question' => question::where('Q_id' , \Auth::user()->public_key )->first()->public_key     
         ];
         // $blocks = (object) $block;
 
@@ -57,9 +58,11 @@ class QuestionController extends Controller
             'question'  => 'required|min:1',
         ]);
 
-        $report = Question::create([
+        $question = Question::create([
             'question' => $validated_data['question'],
-            'q_id'     => \Auth::user()->first()->public_key,
+            'q_id'     => \Hash::make(str_random(5)),
+            'user_id'  => \Auth::user()->public_key,
+            
         ]);
 
         return redirect()->route("main.index");

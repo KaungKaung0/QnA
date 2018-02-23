@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('question');
             $table->string('q_id');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

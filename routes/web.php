@@ -16,7 +16,8 @@ Route::get('/home', 'MainController@index');
 Route::resource('main' , 'MainController');
 Route::get('/', 'MainController@index');
 Route::resource('questions' , 'QuestionController');
-Route::resource('answer' , 'AnswerController');
+Route::resource('answers' , 'AnswerController');
+Route::get('logout', 'MainController@logout' );
 
 
 

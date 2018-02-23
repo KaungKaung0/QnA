@@ -18,8 +18,6 @@ class CreateAnswersTable extends Migration
             $table->string('answer');
             $table->string('user_id');
             $table->string('q_id');
-            $table->string('public_key');
-            $table->string('private_key');
             $table->timestamps();
         });
     }

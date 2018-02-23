@@ -9,7 +9,7 @@ class Question extends Model
     //
 
     protected $fillable = [
-    	'question', 'q_id'
+    	'question', 'q_id' , 'user_id'
     ];
 
     public function user()

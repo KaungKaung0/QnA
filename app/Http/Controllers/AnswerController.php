@@ -45,6 +45,19 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         //
+      
+
+         $validated_data = $request->validate([
+            'answer'  => 'required|min:1',
+        ]);
+
+        $answer = Answer::create([
+            'answer' => $validated_data['answer'],
+            'q_id'     => $request->q_id,
+            'user_id' => \Auth::user()->first()->public_key,
+        ]);
+
+        return redirect()->route("main.index");
     }
 
     /**
@@ -55,7 +68,7 @@ class AnswerController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

@@ -11,6 +11,7 @@
 			
 			<div class="col-md-12">
 				@foreach($q as $que)
+	
 				<div id="box">
 					<div id="nyan_sin1">
 						<br>
@@ -22,20 +23,34 @@
 
 
 					</div>
+					@foreach($a as $ans)
+				@if($ans->q_id == $que->q_id)
 					<div id="content2">
-						<p>Go google, Lol!</p>
+						
+							
+								<p>{{$ans->answer}}</p>
+						
+						
 						<button  class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
 						<button  class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
 					</div>
-					<div class="form-group">
-						<textarea class="form-control answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
-						<button class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-					</div>
+					@endif
+						@endforeach
+					<form method="post" action="{{route('answers.store')}}">
+						{{ csrf_field() }}
+						<div class="form-group">
+							<textarea class="form-control" rows="2"  name="answer" id="answer" placeholder="Answer Here"> </textarea>
+							<input type="hidden" name="q_id" value="{{$que->q_id}}">
+							<button type="submit" class="btn btn-secondary btn-sm submit-button fa fa-upload">Submit</button>
+
+						</div>
+					</form>
 					<div id="nyan_sin2">
 						<br>
 					</div>
 
 				</div>
+			
 				@endforeach
 				{{-- here --}}
 			</div>
@@ -47,14 +62,15 @@
 				</div>
 				<div id="content1">
 					<h2>May kyi!!</h2>
-					<form id="logout-form" action="{{ route('logout') }}" method="POST">
+					<a href="{{route('logout')}}"> Logout</a>
+					{{-- <form id="logout-form" action="{{ route('logout') }}" method="POST">
 						{{ csrf_field() }}
 						<button type="submit" class="btn btn-danger">Logout</button>
-					</form>
+					</form> --}}
 					<form method="post" action="{{route('questions.store')}}">
 						{{ csrf_field() }}
 						<div class="form-group">
-							<textarea class="form-control" rows="5" cols="2" name="question" id="question" placeholder="Question Here"> </textarea>
+							<textarea class="form-control" rows="3"  name="question" id="question" placeholder="Question Here"> </textarea>
 
 							<button type="submit" class="btn btn-secondary btn-sm submit-button fa fa-upload">Submit</button>
 

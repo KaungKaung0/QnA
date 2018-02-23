@@ -5,13 +5,25 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Question;
 use App\Answer;
+use Auth;
 
 class MainController extends Controller
 {
 
     public function __construct()
     {
+        session_start();
         $this->middleware('auth');
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        // session_destroy();
+        // session_unset();
+        return view('auth.login');
+        // $b = \Auth::id();
+        // echo $b;
     }
     /**
      * Display a listing of the resource.
@@ -21,11 +33,14 @@ class MainController extends Controller
     public function index()
     {
         //
+
         $user = \Auth::user()->first()->public_key;
 
-
-        $q = Question::where('q_id' , $user)->get();
-        return view('main' , compact('q'));
+        $a = Answer::get();
+        $q = Question::paginate('5');
+         
+        
+        return view('main' , compact( 'a','q'));
 
     }
 
