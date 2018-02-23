@@ -109,3 +109,17 @@
 .active{
 	background-color: red;
 }
+
+.login_color{
+	background-color: #009688;
+}
+
+#login_shadow{
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 100px;
+}
+
+.link_color{
+	color: red;
+}
