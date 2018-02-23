@@ -20,9 +20,14 @@
                     <a href="#menu1" class="list-group-item collapsed font-color" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-home"></i> <span class="hidden-sm-down">Home</span> </a>
                     <a href="#" class="list-group-item collapsed font-color" data-parent="#sidebar"><i class="fa fa-user"></i><span class="hidden-sm-down">My Profile</span></a>
                     <a href="#menu3" class="list-group-item collapsed font-color" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-code"></i> <span class="hidden-sm-down">About Developers</span></a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn button-official">Logout</button>
+                    </form>
+                    
+                </div>
             </div>
+
         </div>
-        
     </div>
-</div>
 </nav>

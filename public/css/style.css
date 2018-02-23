@@ -1,3 +1,5 @@
+
+
 #header_welcome h1{
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -130,3 +132,12 @@
 .link_color{
 	color: red;
 }
+
+.button-official{
+	width: 200px;
+	background-color: white;
+	color: black;
+	border-radius: 0px;
+}
+
+
