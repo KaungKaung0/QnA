@@ -1,3 +1,11 @@
+#header_welcome h1{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#content1{
+	font-family: 'Ubuntu', sans-serif;
+}
+
 #leftnavone{
 	float: left;
 }

@@ -3,7 +3,7 @@
 @section('main')
 <div class="container">
 	<div id="header_welcome">
-		<h1>Top rated questions</h1>
+		<h1>Top-rated Questions</h1>
 	</div>
 	<div class="row">
 

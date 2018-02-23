@@ -22,16 +22,17 @@ class QuestionController extends Controller
     {
         
         
-        $blocks = [
-            'name'  => \Auth::user()->name,
-            'private_key' => \Auth::user()->private_key,
-            'public_key'  => \Auth::user()->public_key,
-            'question' => question::where('Q_id' , '1')->first()->question       
-        ];
+        // $blocks = [
+        //     'name'  => \Auth::user()->name,
+        //     'private_key' => \Auth::user()->private_key,
+        //     'public_key'  => \Auth::user()->public_key,
+        //     'question' => question::where('Q_id' , '1')->first()->question       
+        // ];
         // $blocks = (object) $block;
 
-        return view('question')->with('blocks' , $blocks);
+        // return view('question')->with('blocks' , $blocks);
         //
+        return view ('question');
     }
 
     /**
