@@ -56,6 +56,166 @@
 					</table>
 				</div>
 			</div>
+			<div class="col-md-3">
+				<div class="image-container-apyin">
+					<div class="image-container-atwin">
+						<div class="image-container">
+							<img src="KaungSan.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div id="content1">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th scope="row">Developer Name</th>
+								<td>-</td>
+								<td>Paing Hein Htet</td>
+							</tr>
+							<tr>
+								<th scope="row">Role</th>
+								<td>-</td>
+								<td>Front-end developer</td>
+							</tr>
+							<tr>
+								<th scope="row">Portfolio</th>
+								<td>-</td>
+								<td>I am studying Computer Science at University of Yangon. I am single.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="image-container-apyin">
+					<div class="image-container-atwin">
+						<div class="image-container">
+							<img src="KaungSan.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div id="content1">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th scope="row">Developer Name</th>
+								<td>-</td>
+								<td>Paing Hein Htet</td>
+							</tr>
+							<tr>
+								<th scope="row">Role</th>
+								<td>-</td>
+								<td>Front-end developer</td>
+							</tr>
+							<tr>
+								<th scope="row">Portfolio</th>
+								<td>-</td>
+								<td>I am studying Computer Science at University of Yangon. I am single.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="image-container-apyin">
+					<div class="image-container-atwin">
+						<div class="image-container">
+							<img src="KaungSan.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div id="content1">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th scope="row">Developer Name</th>
+								<td>-</td>
+								<td>Paing Hein Htet</td>
+							</tr>
+							<tr>
+								<th scope="row">Role</th>
+								<td>-</td>
+								<td>Front-end developer</td>
+							</tr>
+							<tr>
+								<th scope="row">Portfolio</th>
+								<td>-</td>
+								<td>I am studying Computer Science at University of Yangon. I am single.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="image-container-apyin">
+					<div class="image-container-atwin">
+						<div class="image-container">
+							<img src="KaungSan.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div id="content1">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th scope="row">Developer Name</th>
+								<td>-</td>
+								<td>Paing Hein Htet</td>
+							</tr>
+							<tr>
+								<th scope="row">Role</th>
+								<td>-</td>
+								<td>Front-end developer</td>
+							</tr>
+							<tr>
+								<th scope="row">Portfolio</th>
+								<td>-</td>
+								<td>I am studying Computer Science at University of Yangon. I am single.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="image-container-apyin">
+					<div class="image-container-atwin">
+						<div class="image-container">
+							<img src="KaungSan.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div id="content1">
+					<table class="table">
+						<tbody>
+							<tr>
+								<th scope="row">Developer Name</th>
+								<td>-</td>
+								<td>Paing Hein Htet</td>
+							</tr>
+							<tr>
+								<th scope="row">Role</th>
+								<td>-</td>
+								<td>Front-end developer</td>
+							</tr>
+							<tr>
+								<th scope="row">Portfolio</th>
+								<td>-</td>
+								<td>I am studying Computer Science at University of Yangon. I am single.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 		<div id="nyan_sin2">
 			<br>
