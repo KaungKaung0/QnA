@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\Answer;
 
 class AnswerController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +21,9 @@ class AnswerController extends Controller
     public function index()
     {
         //
+        $q = 1;
+        $answer = Answer::where('q_id' , $q)->first();
+        dd($answer);
     }
 
     /**

@@ -50,15 +50,15 @@
                         </div>
                         <a href="#" class="list-group-item font-color" data-parent="#menu3">3.3</a>
                     </div>
-<<<<<<< HEAD
+
                     <a href="#" class="list-group-item collapsed font-color" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="hidden-sm-down">My QnA</span></a>
                     <a href="#" class="list-group-item collapsed font-color" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Favourite Questions</span></a>
                     <a href="#" class="list-group-item collapsed font-color" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="hidden-sm-down">About Us</span></a>
-=======
+
                     <!-- <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-heart"></i> <span class="hidden-sm-down">My QnA</span></a> -->
                     <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Favourite Questions</span></a>
                     <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="hidden-sm-down">About Us</span></a>
->>>>>>> c56a2084d37d7221533d86de43d78caa32fa9e66
+
                 <!-- <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-th"></i> <span class="hidden-sm-down">Link</span></a>
                 <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-gear"></i> <span class="hidden-sm-down">Link</span></a>
                 <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-calendar"></i> <span class="hidden-sm-down">Link</span></a>

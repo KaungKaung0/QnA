@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Question;
 use App\Answer;
 
-class QuestionController extends Controller
+class MainController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,18 +20,13 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $q= Question::where('Q_id' , \Auth::user()->public_key )->paginate('5');
-        
-        $blocks = [
-            'name'  => \Auth::user()->name,
-            'private_key' => \Auth::user()->private_key,
-            'public_key'  => \Auth::user()->public_key,
-            'question' => question::where('Q_id' , \Auth::user()->public_key )->first()->question       
-        ];
-        // $blocks = (object) $block;
-
-        return view('question')->with('blocks' , [$blocks , $q]);
         //
+        $user = \Auth::user()->first()->public_key;
+
+
+        $q = Question::where('q_id' , $user)->get();
+        return view('main' , compact('q'));
+
     }
 
     /**
@@ -53,16 +48,6 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         //
-         $validated_data = $request->validate([
-            'question'  => 'required|min:1',
-        ]);
-
-        $report = Question::create([
-            'question' => $validated_data['question'],
-            'q_id'     => \Auth::user()->first()->public_key,
-        ]);
-
-        return redirect()->route("main.index");
     }
 
     /**
