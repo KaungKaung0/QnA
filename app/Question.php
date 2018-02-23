@@ -12,10 +12,6 @@ class Question extends Model
     	'question', 'q_id'
     ];
 
-    protected $hidden = [
-    	'q_id'
-    ];
-
     public function user()
     {
         	return $this->hasOne('App\User');

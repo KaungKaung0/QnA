@@ -9,10 +9,10 @@ use App\Answer;
 class QuestionController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +20,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
+        $q= Question::where('Q_id' , \Auth::user()->public_key )->paginate('5');
         
-        
+<<<<<<< HEAD
         // $blocks = [
         //     'name'  => \Auth::user()->name,
         //     'private_key' => \Auth::user()->private_key,
@@ -31,6 +32,17 @@ class QuestionController extends Controller
         // $blocks = (object) $block;
 
         // return view('question')->with('blocks' , $blocks);
+=======
+        $blocks = [
+            'name'  => \Auth::user()->name,
+            'private_key' => \Auth::user()->private_key,
+            'public_key'  => \Auth::user()->public_key,
+            'question' => question::where('Q_id' , \Auth::user()->public_key )->first()->question       
+        ];
+        // $blocks = (object) $block;
+
+        return view('question')->with('blocks' , [$blocks , $q]);
+>>>>>>> d61cdc8a4d09ff4147168ea8dd54f864251e3f19
         //
         return view ('question');
     }
@@ -54,6 +66,16 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         //
+         $validated_data = $request->validate([
+            'question'  => 'required|min:1',
+        ]);
+
+        $report = Question::create([
+            'question' => $validated_data['question'],
+            'q_id'     => \Auth::user()->first()->public_key,
+        ]);
+
+        return redirect()->route("main.index");
     }
 
     /**

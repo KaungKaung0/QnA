@@ -91,3 +91,21 @@
 	margin-top: 10px;
 	margin-left: 10px;
 }
+
+.color-change{
+	background-color: #009688;
+}
+
+.font-color{
+	color: black;
+}
+
+
+
+.font-color:hover {
+	color: green;
+}
+
+.active{
+	background-color: red;
+}
