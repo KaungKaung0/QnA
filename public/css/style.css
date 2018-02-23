@@ -1,6 +1,13 @@
 #header_welcome h1{
 	font-family: 'Ubuntu', sans-serif;
 }
+#header_profile h1{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#secondheader_profile h1{
+	font-family: 'Ubuntu', sans-serif;
+}
 
 #content1{
 	font-family: 'Ubuntu', sans-serif;
