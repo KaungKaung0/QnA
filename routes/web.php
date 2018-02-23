@@ -17,6 +17,7 @@ Route::resource('main' , 'MainController');
 Route::get('/', 'MainController@index');
 Route::resource('questions' , 'QuestionController');
 Route::resource('answer' , 'AnswerController');
+Route::resource('profile', 'ProfileController');
 
 
 

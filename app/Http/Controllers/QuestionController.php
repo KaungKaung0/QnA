@@ -6,14 +6,7 @@ use Illuminate\Http\Request;
 use App\Question;
 use App\Answer;
 
-class QuestionController extends Controller
-<?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Question;
-use App\Answer;
 
 class QuestionController extends Controller
 {
@@ -36,11 +29,11 @@ class QuestionController extends Controller
              'name'  => \Auth::user()->name,
              'private_key' => \Auth::user()->private_key,
              'public_key'  => \Auth::user()->public_key,
-             'question' => question::where('Q_id' , '1')->first()->question       
+             'question' => question::where('q_id' , \Auth::user()->public_key)->first()->question       
          ];
          //$blocks = (object) $block;
 
-         return view('question') -> with('blocks', [$blocks, $q])
+         return view('question') -> with('blocks', [$blocks, $q]);
     }
 
     /**
