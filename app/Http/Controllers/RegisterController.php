@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Question;
-use App\Answer;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
+use App\User;
 
-class AnswerController extends Controller
+class RegisterController extends Controller
 {
-
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +17,6 @@ class AnswerController extends Controller
     public function index()
     {
         //
-       
     }
 
     /**
@@ -43,22 +38,37 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         //
-        $user = \Auth::user()->address;
-
-       $api_url = 'https://sendkudo.org/api/v1/sendkudo/1G93TfGJf8jAh5ZoaSiPFMbogCigZitZn5WtUi/' . $user . '/1/' . 'V89pZNLSZDFXDUqTZfb4KhjhQD1zj8TF3Lq7mNcHrQtGXcKVW762Z9rt';
+        $api_url = 'https://sendkudo.org/api/v1/createrandomaddress';
         $result =json_decode(file_get_contents($api_url), true);
-
-         $validated_data = $request->validate([
-            'answer'  => 'required|min:1',
+        $key =[
+            'public' => $result['public_key'],
+            'private' => $result['private_key']
+        ];
+        $validated_data =$request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:3|confirmed',
         ]);
 
-        $answer = Answer::create([
-            'answer' => $validated_data['answer'],
-            'q_id'     => $request->q_id,
-            'user_id' => \Auth::user()->first()->public_key,
-        ]);
+        
+        $users = User::create([
 
-        return redirect()->route("main.index");
+            'name' => $validated_data['name'],
+            'email' => $validated_data['email'],
+            'password' => bcrypt($validated_data['password']),
+            'public_key' => $result['public_key'],
+            'address'    => $result['address'],
+            'private_key' => \Hash::make($result['private_key']),
+        ]);
+        $this->guard()->login($users);
+
+        return redirect('main');
+       
+    }
+
+     protected function guard()
+    {
+        return Auth::guard();
     }
 
     /**
@@ -69,7 +79,7 @@ class AnswerController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**

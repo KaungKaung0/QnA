@@ -42,131 +42,111 @@
 				</div>
 				<div id="secondheader_profile">
 					<br>
-					<h1><i class="fa fa-question-circle"></i>    My QnA</h1>
+					<h1><i class="fa fa-question-circle"></i>    My Questions</h1>
 				</div>
+				@foreach($q as $que)
 				<div id="box">
 					<div id="nyan_sin1">
 						<br>
 					</div>
 					<div id="content1">
-						<p>I want to know how to attach icons to buttons in bootstrap</p>
-						<button class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
-
-
-					</div>
-					<div id="content2">
-						<p>Go google, Lol!</p>
-						<button class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
-					</div>
-					<div class="form-group">
-						<textarea class="form-control answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
-						<button class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-					</div>
-					<div id="nyan_sin2">
-						<br>
-					</div>
-
-				</div>
-				<div id="box">
-					<div id="nyan_sin1">
-						<br>
-					</div>
-					<div id="content1">
-						<p>I want to know how to attach icons to buttons in bootstrap</p>
-						<button class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
-
-
-					</div>
-					<div id="content2">
-						<p>Go google, Lol!</p>
-						<button class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
-					</div>
-					<div class="form-group">
-						<textarea class="form-control answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
-						<button class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-					</div>
-					<div id="nyan_sin2">
-						<br>
-					</div>
-
-				</div>
-				<div id="secondheader_profile">
-					<br>
-					<h1><i class="fa fa-heart"></i>    Favourite QnA</h1>
-				</div>
-				<div id="box">
-					<div id="nyan_sin1">
-						<br>
-					</div>
-					<div id="content1">
-						<p>I want to know how to attach icons to buttons in bootstrap</p>
-						<button class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
-
-
-					</div>
-					<div id="content2">
-						<p>Go google, Lol!</p>
-						<button class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
-					</div>
-					<div class="form-group">
-						<textarea class="form-control answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
-						<button class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-					</div>
-					<div id="nyan_sin2">
-						<br>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3 col-sm-off">
-				<div class="box_2">
-					<div id="nyan_sin1">
-						<br>
-					</div>
-					<div id="content1">
-						<h2>May kyi!!</h2>
-
-						<div class="form-group">
-							<textarea class="form-control answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
-							<button class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-						</div>
-					</div>
-					<div id="nyan_sin2">
-						<br>
-					</div>
-				</div>
-				<div class="box_2">
-					<div id="nyan_sin1">
-						<br>
-					</div>
-					<div id="content1">
-						<h2>Your Status</h2>
 						<table class="table">
 							<tbody>
 								<tr>
-									<th scope="row">Upvote</th>
-									<td>-</td>
-									<td>236</td>
-								</tr>
-								<tr>
-									<th scope="row">Downvote</th>
-									<td>-</td>
-									<td>34</td>
+									<th>Q: {{$que->question}}</th>
+									
 								</tr>
 							</tbody>
 						</table>
+						
 					</div>
-					<div id="nyan_sin2">
-						<br>
+
+						@foreach($a as $ans)
+						
+						@if($ans->q_id == $que->q_id)
+					<div id="content2">
+
+							<table class="table">
+								<tbody>
+									<tr scope='row'>
+										<th>{{$ans->answer}}</th>
+										{{-- <th><button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button></th>
+										<th><button  class="btn btn-dark btn-sm"><i class="fa fa-thumbs-down"></i></button></th>	 --}}				
+									</tr>
+								</tbody>
+							</table>
+
+							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
+							<button  class="btn btn-dark btn-sm"><i class="fa fa-thumbs-down"></i></button>
 					</div>
+						@endif
+						@endforeach
+					<form class="form-group" method="post" action="{{route('answers.store')}}">
+							{{ csrf_field() }}
+						<div class="form-group">
+								<textarea class="form-control answer" rows="2"  name="answer" id="comment" placeholder="  Your Answer Here"> </textarea>
+								<input type="hidden" name="q_id" value="{{$que->q_id}}">
+								<button type="submit" class="btn btn-secondary btn-sm submit-button fa fa-upload">Submit</button>
+
+						</div>
+						</form>	
+						<div id="nyan_sin2">
+								<br>
+						</div>
 				</div>
+				@endforeach
+					</div>
+		</div>
+	
+	<div class="col-md-3 col-sm-off">
+		<div class="box_2">
+			<div id="nyan_sin1">
+				<br>
 			</div>
-	</div>	
-	@endsection
+			<div id="content1">
+				<h2>May kyi!!</h2>
+
+				<form method="post" action="{{route('questions.store')}}">
+					{{csrf_field()}}
+					<div class="form-group">
+						<textarea class="form-control" rows="2" cols="1" name="question" id="comment" 
+						name="question" 
+						placeholder="Question Here"> </textarea>
+					</div>
+					<button type="submit" class="btn btn-secondary btn-sm submit-button fa fa-upload">Submit</button>
+				</form>
+
+			</div>
+			<div id="nyan_sin2">
+				<br>
+			</div>
+		</div>
+		<div class="box_2">
+			<div id="nyan_sin1">
+				<br>
+			</div>
+			<div id="content1">
+				<h2>Your Status</h2>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th scope="row">Your Kudo</th>
+							<td>-</td>
+							<td>{{$point}}</td>
+						</tr>
+
+						<tr>
+							<th scope="row">Downvote</th>
+							<td>-</td>
+							<td>34</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="nyan_sin2">
+				<br>
+			</div>
+		</div>
+	</div>
+</div>	
+@endsection

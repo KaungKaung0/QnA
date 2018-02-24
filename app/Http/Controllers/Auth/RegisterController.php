@@ -27,7 +27,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    
+
+     
 
     /**
      * Create a new controller instance.
@@ -51,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:3|confirmed',
         ]);
     }
 
@@ -61,14 +63,19 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+         
+
     protected function create(array $data)
     {
-
+        $api_url = 'https://sendkudo.org/api/v1/createrandomaddress';
+        $result =json_decode(file_get_contents($api_url), true);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'public_key' => hash('SHA256' , str_random(8))
+            'public_key' => $result['public_key']
         ]);
+
+      
     }
 }

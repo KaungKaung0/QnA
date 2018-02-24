@@ -33,9 +33,8 @@ class MainController extends Controller
     public function index()
     {
         //
-
-        $user = \Auth::user()->first()->public_key;
-
+        $user = \Auth::user()->public_key;
+       
         $a = Answer::get();
         $q = Question::paginate('5');
          

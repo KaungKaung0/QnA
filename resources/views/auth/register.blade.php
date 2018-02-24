@@ -9,7 +9,7 @@
                 <div class="card-header login_color"><h2>Register</h2></div>
 
                 <div class="card-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('registers.store') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

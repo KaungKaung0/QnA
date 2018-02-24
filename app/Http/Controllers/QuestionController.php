@@ -12,10 +12,10 @@ use App\Answer;
 class QuestionController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,11 +23,10 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $user = \Auth::user()->first()->public_key;
+        $user = \Auth::user()->public_key;
 
         $a = Answer::get();
         $q = Question::paginate('5');
-
         return view('question');
     }
 
@@ -50,6 +49,8 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         //
+
+
          $validated_data = $request->validate([
             'question'  => 'required|min:1',
         ]);

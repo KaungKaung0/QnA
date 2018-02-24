@@ -11,27 +11,40 @@
 			<div class="col-md-9 col-sm-9">
 				<div class="col-md-12">
 					@foreach($q as $que)
+					@foreach($a as $ans)
+						
+						@if($ans->q_id == $que->q_id)
 					<div id="box">
-						<div id="nyan_sin1">
+						{{-- <div id="nyan_sin1">
 							<br>
-						</div>
+						</div> --}}
 						<div id="content1">
-							<p>{{$que->question}}</p>
+							<table class="table">
+								<thead>
+									<tr>Question</tr>
+								</thead>
+								<tbody>
+									<tr row="scope"	>
+										<th>
+											{{$que->question}}
+										</th>
+									</tr>
+									<tr row='scope'>
+										<th>
+											{{$ans->answer}}
+										</th>
+										<th>
+											<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
+							<button  class="btn btn-dark btn-sm"><i class="fa fa-thumbs-down"></i></button>
+										</th>
+									</tr>
+								</tbody>
+							</table>
 							{{-- <button  class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
 							<button  class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button> --}}
 						</div>
 
-						@foreach($a as $ans)
-						
-						@if($ans->q_id == $que->q_id)
-						<div id="content2">
-
-
-							<p>{{$ans->answer}}</p>
-
-
-							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
-							<button  class="btn btn-dark btn-sm"><i class="fa fa-thumbs-down"></i></button>
+							
 						</div>
 						@break;
 						@endif
@@ -40,7 +53,8 @@
 						<form class="form-group" method="post" action="{{route('answers.store')}}">
 							{{ csrf_field() }}
 							<div class="form-group">
-								<textarea class="form-control answer" rows="2"  name="answer" id="comment" placeholder="Answer Here"> </textarea>
+								<textarea class="form-control answer"  name="answer" placeholder="Answer Here"> 
+								</textarea>
 								<input type="hidden" name="q_id" value="{{$que->q_id}}">
 								<button type="submit" class="btn btn-secondary btn-sm submit-button fa fa-upload">Submit</button>
 
@@ -64,7 +78,7 @@
 					<div id="content1">
 						<h2>May kyi!!</h2>
 						<form method="post" action="{{route('questions.store')}}">
-							
+							{{csrf_field()}}
 							<div class="form-group">
 								<textarea class="form-control" rows="2" cols="1" name="question" id="comment" 
 								name="question" 
