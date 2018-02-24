@@ -6,21 +6,23 @@
 		<br>
 		<h1><i class="fa fa-user"></i>    My Profile</h1>
 	</div>
-	<div class="row">
+	<div class="row wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms"">
 		<div class="col-md-9 col-sm-9">
 			<div class="col-md-12">
-				<div id="box">
+			
+				<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 					<div id="nyan_sin1">
 						<br>
 					</div>
-
+					)
 					<div id="content1">
 						<table class="table">
 							<tbody>
 								<tr>
 									<th scope="row">Name</th>
 									<td>-</td>
-									<td>Paing Hein Htet</td>
+									
+									<td>{{$amazing}}</td>
 								</tr>
 								<tr>
 									<th scope="row">Major</th>
@@ -30,7 +32,7 @@
 								<tr>
 									<th scope="row">Portfolio</th>
 									<td>-</td>
-									<td>I am studying Computer Science at University of Yangon. I am single.</td>
+									<td></td>
 								</tr>
 							</tbody>
 						</table>
@@ -40,12 +42,13 @@
 						<br>
 					</div>
 				</div>
+				
 				<div id="secondheader_profile">
 					<br>
 					<h1><i class="fa fa-question-circle"></i>    My Questions</h1>
 				</div>
 				@foreach($q as $que)
-				<div id="box">
+				<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 					<div id="nyan_sin1">
 						<br>
 					</div>
@@ -99,7 +102,7 @@
 		</div>
 	
 	<div class="col-md-3 col-sm-off">
-		<div class="box_2">
+		<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms"">
 			<div id="nyan_sin1">
 				<br>
 			</div>

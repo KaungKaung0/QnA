@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Krona+One');
 
 #header_welcome h1{
 	font-family: 'Ubuntu', sans-serif;
@@ -198,3 +198,143 @@
  {
  	margin-top: 50px;
  }
+
+ .blur_control {
+  background: url('Material_BackGround.png') no-repeat center center ;
+  margin-bottom: 10px;
+  height: 1000px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.main_box{
+	margin-top: 100px;
+	filter: none;
+}
+
+.blur {
+  background: url('Material_BackGround.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  filter: blur(25px);
+  position: absolute;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+}
+
+.widget {
+  border-top: 2px solid rgba(255, 255, 255, .5);
+  border-bottom: 2px solid rgba(255, 255, 255, .5);
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+/*  NOT REQUIRED  */
+
+.text {
+  height: 200px;
+  width: 340px;
+}
+
+.text h1 {
+  text-align: center;
+  text-shadow: 1px 1px rgba(0, 0, 0, .1);
+  color: #ffffff;
+  margin-top: 57px;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 38px;
+}
+
+.text p {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px rgba(0, 0, 0, .1);
+  margin-top: 0px;
+  font-family: 'Lato', serif;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.box_3{
+	background-color: white;
+	border-radius: 2px;
+	box-shadow: 0 0px 0px 0 black, 0 0px 2px 0 black;
+	margin-top: 150px;
+	margin-bottom: 10px;
+}
+
+#content5{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding-left: 5px;
+	background-color: #009688;
+	box-shadow: 2px 2px;
+	border-radius: 2px;
+	padding-bottom: 10px;
+}
+
+.white{
+	color: white;
+}
+
+.question_id_main{
+	margin-top: 20px;
+	height: 100px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 670px;
+}
+
+.question_id{
+	margin-top: 20px;
+	height: 250px;
+}
+
+
+.init{
+	font-size: 30px;
+	color: white;
+	font-family: 'Krona One', sans-serif;
+}
+
+.q_tab{
+	background-color: #009688;
+	height: 40px;
+	width: 40px;
+	margin-top: 2px;
+}
+
+.font_p{
+	height: 47px;
+	text-align: center;
+}
+
+.blah_button{
+	margin-top: 6px;
+	margin-left: 8px;
+}
+
+.may_kyi{
+	text-align: center;
+}

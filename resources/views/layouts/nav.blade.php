@@ -6,10 +6,10 @@
             </div>
         </div>
         <div id="rightnavone">
-            <a class="navbar-brand font-color" href="#">
+            <a class="navbar-brand font-color init" href="#">
 
                 <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-                May Kyi
+                မေးကြည့် Mayy Kyi
             </a>
         </div>
     </div>

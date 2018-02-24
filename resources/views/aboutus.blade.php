@@ -6,7 +6,7 @@
 	<div id="header_aboutus">
 		<h1><i class="fa fa-code"></i>Developer Portfolio</h1>
 	</div>
-	<div id="box">
+	<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 		<div id="nyan_sin1">
 			<br>
 		</div>
@@ -18,7 +18,7 @@
 			<br>
 		</div>
 	</div>
-	<div id="box">
+	<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 		<div id="nyan_sin1">
 			<br>
 		</div>

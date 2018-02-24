@@ -9,7 +9,7 @@
 			<div class="col-md-12">
 		
 				
-				<div id="box">
+				<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 				
 					<div id="nyan_sin1">
 						<br>
@@ -32,7 +32,7 @@
 
 				</div>
 				
-				<div id="box">
+				<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 					<div id="nyan_sin1">
 						<br>
 					</div>
@@ -44,8 +44,8 @@
 							@foreach($a as $ans)
 								<tr>
 								@if($ans->q_id == $que->q_id)
-									<td>{{$ans->answer}} <br> <button class="btn btn-success btn-sm"><i class="fa fa-thumbs-up"></i> Upvote</button>
-										<button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> Downvote</button>
+									<td>{{$ans->answer}} <br> <button id = "success" class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i> </button>
+										<button id="danger" class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button>
 									</td>
 									@endif
 								</tr>
@@ -65,7 +65,7 @@
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-off">
-			<div class="box_2">
+			<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms"">
 				<div id="nyan_sin1">
 					<br>
 				</div>
@@ -73,7 +73,7 @@
 					<h2>May kyi!!</h2>
 
 					<div class="form-group">
-						<textarea class="form-control answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
+						<textarea class="form-control question_id" rows="5" id="comment" placeholder="Your Answer"> </textarea>
 						<button class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
 					</div>
 				</div>
