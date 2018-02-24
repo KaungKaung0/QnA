@@ -158,8 +158,38 @@
 	border-radius: 0px;
 }
 
-.image-container{
-	background-image: url('KaungSan.jpg');
+.image-container1{
+	background-image: url('Kaung_Khant_Thu_Off.jpg');
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+}
+.image-container2{
+	background-image: url('Soe_Htet_San_Off.jpg');
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+}
+.image-container3{
+	background-image: url('Thar_Htet_Zan_Off.jpg');
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+}
+.image-container4{
+	background-image: url('Kaung_San_Off.jpg');
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+}
+.image-container5{
+	background-image: url('Paing_Hein_Htet_Off.jpg');
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+}
+.image-container6{
+	background-image: url('Kaung_Min_Khant_Off.jpg');
 	width: 200px;
 	height: 200px;
 	border-radius: 100%;
