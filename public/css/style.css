@@ -96,6 +96,14 @@
 	height: 300px;
 }
 
+.question_id{
+	margin-top: 10px;
+	height: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 200px;
+}
+
 .icon_color{
 	color: #9E9E9E;
 }

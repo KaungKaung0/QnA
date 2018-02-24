@@ -81,7 +81,7 @@
 					</div>
 						@endif
 						@endforeach
-					<form class="form-group" method="post" action="{{route('answers.store')}}">
+					<form class="form-group" method="post" action="{{route('pans.store')}}">
 							{{ csrf_field() }}
 						<div class="form-group">
 								<textarea class="form-control answer" rows="2"  name="answer" id="comment" placeholder="  Your Answer Here"> </textarea>
