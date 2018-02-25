@@ -16,9 +16,14 @@ Route::get('/home', 'MainController@index') -> name('main');
 Route::get('/', 'MainController@index') -> name('main');
 
 Route::resource('main' , 'MainController');
-Route::resource('questions' , 'QuestionController') ;
+
+Route::resource('questions' , 'QuestionController');
 Route::resource('answers' , 'AnswerController');
 Route::resource('registers' , 'RegisterController');
+Route::resource('qans' , 'QansController');
+Route::resource('pans' , 'PansController');
+
+
 Route::get('/profile', 'ProfileController@index')-> name('profile');
 
 Route::get('/aboutus', 'AboutusController@index') -> name('aboutus');

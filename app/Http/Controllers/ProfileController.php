@@ -10,7 +10,7 @@ use App\Answer;
 class ProfileController extends Controller
 {
     public function index(){
-
+        $amazing = \Auth::user()->name;
     	$user = \Auth::user()->address;
     	$url = 'https://sendkudo.org/api/v1/getbalance/' . $user; 
     	$result =json_decode(file_get_contents($url), true);
@@ -20,6 +20,6 @@ class ProfileController extends Controller
     	$a = Answer::get();
         $q = Question::where('user_id' , $user_id)->paginate('5');
         
-    	return view('profile' ,compact('point' , 'a' , 'q'));
+    	return view('profile' ,compact('point' , 'a' , 'q', 'amazing'));
     }
 }

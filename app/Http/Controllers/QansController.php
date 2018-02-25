@@ -3,38 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Question;
 use App\Answer;
-use App\User;
 
-
-class QuestionController extends Controller
+class QansController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
     public function index()
     {
-        $user = \Auth::user()->public_key;
-        
-=======
-    public function index(Request $request)
-    {   
-
->>>>>>> 6acd6e8aa4e5fad099e00f207e41952762499b7a
-        $a = Answer::get();
-        $q = Question::where('q_id' , $request->q_id)->paginate('1');
-
-        return view('question' , compact('a' , 'q'));
+        //
+       
     }
 
     /**
@@ -56,22 +43,25 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         //
+        $user = \Auth::user()->address;
 
+       $api_url = 'https://sendkudo.org/api/v1/sendkudo/1G93TfGJf8jAh5ZoaSiPFMbogCigZitZn5WtUi/' . $user . '/1/' . 'V89pZNLSZDFXDUqTZfb4KhjhQD1zj8TF3Lq7mNcHrQtGXcKVW762Z9rt';
+        $result =json_decode(file_get_contents($api_url), true);
 
          $validated_data = $request->validate([
-            'question'  => 'required|min:1',
+            'answer'  => 'required|min:1',
         ]);
 
-        $question = Question::create([
-            'question' => $validated_data['question'],
-            'q_id'     => \Hash::make(str_random(5)),
-            'user_id'  => \Auth::user()->public_key,
-            
+        $answer = Answer::create([
+            'answer' => $validated_data['answer'],
+            'q_id'     => $request->q_id,
+            'user_id' => \Auth::user()->first()->public_key,
         ]);
 
-        return redirect()->route("main.index");
+        return redirect()->route("questions.index" , ['q_id' => $request->q_id]);
     }
 
+    
     /**
      * Display the specified resource.
      *
@@ -80,7 +70,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -117,5 +107,3 @@ class QuestionController extends Controller
         //
     }
 }
-
-
