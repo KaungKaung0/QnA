@@ -45,7 +45,7 @@ class AnswerController extends Controller
         //
         $user = \Auth::user()->address;
 
-       $api_url = 'https://sendkudo.org/api/v1/sendkudo/1G93TfGJf8jAh5ZoaSiPFMbogCigZitZn5WtUi/' . $user . '/1/' . 'V89pZNLSZDFXDUqTZfb4KhjhQD1zj8TF3Lq7mNcHrQtGXcKVW762Z9rt';
+       $api_url = 'https://sendkudo.org/api/v1/sendkudo/1G93TfGJf8jAh5ZoaSiPFMbogCigZitZn5WtUi/' . '1NJ1deHce2b6TuHtgxymJsi4PpeENSN5LQKbFZ' . '/49945/' . 'V89pZNLSZDFXDUqTZfb4KhjhQD1zj8TF3Lq7mNcHrQtGXcKVW762Z9rt';
         $result =json_decode(file_get_contents($api_url), true);
 
          $validated_data = $request->validate([

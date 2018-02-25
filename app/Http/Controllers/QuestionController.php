@@ -24,7 +24,7 @@ class QuestionController extends Controller
     public function index()
     {
         $user = \Auth::user()->public_key;
-
+        
         $a = Answer::get();
         $q = Question::paginate('5');
         return view('question');
