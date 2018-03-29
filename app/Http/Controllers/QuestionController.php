@@ -21,9 +21,16 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
+    public function index()
+    {
+        $user = \Auth::user()->public_key;
+        
+=======
     public function index(Request $request)
     {   
 
+>>>>>>> 6acd6e8aa4e5fad099e00f207e41952762499b7a
         $a = Answer::get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
 
