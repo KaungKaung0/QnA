@@ -43,10 +43,6 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         //
-        $user = \Auth::user()->address;
-
-       $api_url = 'https://sendkudo.org/api/v1/sendkudo/1G93TfGJf8jAh5ZoaSiPFMbogCigZitZn5WtUi/' . '1NJ1deHce2b6TuHtgxymJsi4PpeENSN5LQKbFZ' . '/49945/' . 'V89pZNLSZDFXDUqTZfb4KhjhQD1zj8TF3Lq7mNcHrQtGXcKVW762Z9rt';
-        $result =json_decode(file_get_contents($api_url), true);
 
          $validated_data = $request->validate([
             'answer'  => 'required|min:1',
@@ -55,7 +51,7 @@ class AnswerController extends Controller
         $answer = Answer::create([
             'answer' => $validated_data['answer'],
             'q_id'     => $request->q_id,
-            'user_id' => \Auth::user()->first()->public_key,
+            'user_id' => \Auth::user()->id,
         ]);
 
         return redirect()->route("main.index");

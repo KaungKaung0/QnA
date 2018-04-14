@@ -14,7 +14,7 @@
 					<div id="nyan_sin1">
 						<br>
 					</div>
-					)
+					
 					<div id="content1">
 						<table class="table">
 							<tbody>
@@ -84,7 +84,7 @@
 					</div>
 						@endif
 						@endforeach
-					<form class="form-group" method="post" action="{{route('pans.store')}}">
+					<form class="form-group" method="post" action="{{route('answers.store')}}">
 							{{ csrf_field() }}
 						<div class="form-group">
 								<textarea class="form-control answer" rows="2"  name="answer" id="comment" placeholder="  Your Answer Here"> </textarea>
@@ -133,9 +133,9 @@
 				<table class="table">
 					<tbody>
 						<tr>
-							<th scope="row">Your Kudo</th>
+							<th scope="row">Your Point</th>
 							<td>-</td>
-							<td>{{$point}}</td>
+							<td>23</td>
 						</tr>
 
 						<tr>

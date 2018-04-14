@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'public_key' , 'address' , 'private_key'
+        'name', 'email', 'password', 'confirmed' ,'confirmation'
     ];
 
     /**
@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'public_key' ,
+        'password', 'remember_token', 'confirmed' ,'confirmation'
     ];
 
     public function question()

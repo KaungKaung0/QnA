@@ -33,16 +33,22 @@ class MainController extends Controller
     public function index()
     {
         //
-        $user = \Auth::user()->public_key;
+        $confirmed = Auth::user()->confirmed;
+        if($confirmed != 1)
+        {
+            flash('Your email is not confirmed. Confirm your email first.  The confirmation code is sent to your email');
+            return redirect()->route('mailconf');
+        }
+       else
+       {
+            $a = Answer::get();
        
-        $a = Answer::get();
         $q = Question::paginate('5');
          
         
         return view('main' , compact( 'a','q'));
-
     }
-
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -18,9 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('public_key');
-            $table->string('address');
-            $table->string('private_key');
+            $table->boolean('confirmed')->default(0);
+            $table->integer('confirmation')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -14,24 +14,28 @@ Auth::routes();
 
 Route::get('/home', 'MainController@index') -> name('main');
 Route::get('/', 'MainController@index') -> name('main');
+Route::get('/mailconf' , 'MailsendController@index')->name('mailconf');
+Route::post('/mailconf/confirm' , 'MailsendController@confirm')->name('mailconf.confirm');
 
+Route::get('/confirmation' , function(){
+	flash('Confirmation code is wrong. Please enter the correct code.');
+	return view('confirmation');
+});
 Route::resource('main' , 'MainController');
 
 Route::resource('questions' , 'QuestionController');
 Route::resource('answers' , 'AnswerController');
 Route::resource('registers' , 'RegisterController');
-Route::resource('qans' , 'QansController');
-Route::resource('pans' , 'PansController');
 
 
 Route::get('/profile', 'ProfileController@index')-> name('profile');
-
 Route::get('/aboutus', 'AboutusController@index') -> name('aboutus');
 Route::get('logout', 'MainController@logout' );
-Route::get('/keyview' ,  function()
-{
-	return view('keyview');
-});
+Route::get('resign' , function(){
+	auth()->logout();
+	return redirect('register');
+})->name('resign');
+
 
 
 

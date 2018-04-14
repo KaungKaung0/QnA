@@ -67,13 +67,11 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        $api_url = 'https://sendkudo.org/api/v1/createrandomaddress';
-        $result =json_decode(file_get_contents($api_url), true);
+       
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'public_key' => $result['public_key']
         ]);
 
       

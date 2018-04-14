@@ -38,31 +38,24 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         //
-        $api_url = 'https://sendkudo.org/api/v1/createrandomaddress';
-        $result =json_decode(file_get_contents($api_url), true);
-        $key =[
-            'public' => $result['public_key'],
-            'private' => $result['private_key']
-        ];
         $validated_data =$request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:3|confirmed',
         ]);
-
+        $confirmation = rand(10000000,99999999);
         
         $users = User::create([
 
             'name' => $validated_data['name'],
             'email' => $validated_data['email'],
             'password' => bcrypt($validated_data['password']),
-            'public_key' => $result['public_key'],
-            'address'    => $result['address'],
-            'private_key' => \Hash::make($result['private_key']),
+            'confirmed' => 0,
+            'confirmation' => $confirmation,
         ]);
         $this->guard()->login($users);
 
-        return redirect('main');
+        return redirect('mailconf')->with('confirmation' , [$confirmation]);
        
     }
 

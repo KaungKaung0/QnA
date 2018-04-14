@@ -17,7 +17,7 @@
 					<div id="content1">
 						<p>{{$que->question}}</p>
 					</div>
-					<form action="{{route('qans.store')}}" method="post">
+					<form action="{{route('answers.store')}}" method="post">
 						{{csrf_field()}}
 						<div class="form-group">
 							<textarea class="form-control answer" name="answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>

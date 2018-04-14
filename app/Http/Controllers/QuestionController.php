@@ -21,16 +21,10 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function index()
-    {
-        $user = \Auth::user()->public_key;
-        
-=======
-    public function index(Request $request)
-    {   
 
->>>>>>> 6acd6e8aa4e5fad099e00f207e41952762499b7a
+    public function index(Request $request)
+    {
+    
         $a = Answer::get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
 
@@ -65,7 +59,7 @@ class QuestionController extends Controller
         $question = Question::create([
             'question' => $validated_data['question'],
             'q_id'     => \Hash::make(str_random(5)),
-            'user_id'  => \Auth::user()->public_key,
+            'user_id'  => \Auth::user()->id,
             
         ]);
 

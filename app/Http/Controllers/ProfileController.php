@@ -11,15 +11,12 @@ class ProfileController extends Controller
 {
     public function index(){
         $amazing = \Auth::user()->name;
-    	$user = \Auth::user()->address;
-    	$url = 'https://sendkudo.org/api/v1/getbalance/' . $user; 
-    	$result =json_decode(file_get_contents($url), true);
-    	$point = $result['balance'];
+    	
 
-    	$user_id = \Auth::user()->public_key;
+    	$user_id = \Auth::user()->id;
     	$a = Answer::get();
         $q = Question::where('user_id' , $user_id)->paginate('5');
         
-    	return view('profile' ,compact('point' , 'a' , 'q', 'amazing'));
+    	return view('profile' ,compact( 'a' , 'q', 'amazing'));
     }
 }
