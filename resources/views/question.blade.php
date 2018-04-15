@@ -17,7 +17,7 @@
 					<div id="content1">
 						<p>{{$que->question}}</p>
 					</div>
-					<form action="{{route('answers.store')}}" method="post">
+					<form action="{{route('answers.store' , ['place' => 'view'])}}" method="post">
 						{{csrf_field()}}
 						<div class="form-group">
 							<textarea class="form-control answer" name="answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
@@ -72,10 +72,13 @@
 				<div id="content1">
 					<h2>May kyi!!</h2>
 
-					<div class="form-group">
-						<textarea class="form-control question_id" rows="5" id="comment" placeholder="Your Answer"> </textarea>
-						<button class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-					</div>
+					<form action="{{route('questions.store' , ['place' => 'view'])}}" method="post">
+						{{csrf_field()}}
+						<div class="form-group">
+							<textarea class="form-control question_id_main" rows="5" id="comment" name="question" placeholder="Your Answer"> </textarea>
+							<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
+						</div>
+					</form>
 				</div>
 				<div id="nyan_sin2">
 					<br>

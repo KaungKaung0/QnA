@@ -24,7 +24,6 @@ class QuestionController extends Controller
 
     public function index(Request $request)
     {
-    
         $a = Answer::get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
 
@@ -50,21 +49,32 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         //
+        $q_id = \Hash::make(str_random(5));
 
+       $validated_data = $request->validate([
+        'question'  => 'required|min:1',
+    ]);
 
-         $validated_data = $request->validate([
-            'question'  => 'required|min:1',
-        ]);
+       $question = Question::create([
+        'question' => $validated_data['question'],
+        'q_id'     => $q_id,
+        'user_id'  => \Auth::user()->id,
 
-        $question = Question::create([
-            'question' => $validated_data['question'],
-            'q_id'     => \Hash::make(str_random(5)),
-            'user_id'  => \Auth::user()->id,
-            
-        ]);
+    ]);
+       $place = $request->place;
+       switch ($place) {
+           case "view":
+           return redirect()->route("questions.index" ,['q_id' => $q_id]);
+           break;  
+           case "profile":
+           return redirect('profile');
+           break;
+           default:
+           return redirect()->route("main.index");
+           break;
+       } 
 
-        return redirect()->route("main.index");
-    }
+   }
 
     /**
      * Display the specified resource.

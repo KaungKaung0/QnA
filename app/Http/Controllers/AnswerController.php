@@ -21,7 +21,7 @@ class AnswerController extends Controller
     public function index()
     {
         //
-       
+
     }
 
     /**
@@ -43,21 +43,31 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         //
+       $validated_data = $request->validate([
+        'answer'  => 'required|min:1',
+    ]);
 
-         $validated_data = $request->validate([
-            'answer'  => 'required|min:1',
-        ]);
+       $answer = Answer::create([
+        'answer' => $validated_data['answer'],
+        'q_id'     => $request->q_id,
+        'user_id' => \Auth::user()->id,
+    ]);
+       $place = $request->place;
+       switch ($place) {
+         case "view":
+            $q_id = $request->q_id;
+            return redirect()->route("questions.index" ,['q_id' => $q_id]);
+         break;  
+         case "profile":
+            return redirect('profile');
+         break;
+         default:
+             return redirect()->route("main.index");
+         break;
+     } 
+ }
 
-        $answer = Answer::create([
-            'answer' => $validated_data['answer'],
-            'q_id'     => $request->q_id,
-            'user_id' => \Auth::user()->id,
-        ]);
 
-        return redirect()->route("main.index");
-    }
-
-    
     /**
      * Display the specified resource.
      *

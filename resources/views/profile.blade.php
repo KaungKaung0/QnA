@@ -84,7 +84,7 @@
 					</div>
 						@endif
 						@endforeach
-					<form class="form-group" method="post" action="{{route('answers.store')}}">
+					<form class="form-group" method="post" action="{{route('answers.store' , ['place' => 'profile'])}}">
 							{{ csrf_field() }}
 						<div class="form-group">
 								<textarea class="form-control answer" rows="2"  name="answer" id="comment" placeholder="  Your Answer Here"> </textarea>
@@ -109,7 +109,7 @@
 			<div id="content1">
 				<h2>May kyi!!</h2>
 
-				<form method="post" action="{{route('questions.store')}}">
+				<form method="post" action="{{route('questions.store' , ['place' => 'profile'])}}">
 					{{csrf_field()}}
 					<div class="form-group">
 						<textarea class="form-control" rows="2" cols="1" name="question" id="comment" 
