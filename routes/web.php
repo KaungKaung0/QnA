@@ -36,6 +36,11 @@ Route::get('resign' , function(){
 	return redirect('register');
 })->name('resign');
 
+Route::get('/t_view' , function(){
+	return view('texteditor');
+})->name('t_view');
+
+
 
 
 

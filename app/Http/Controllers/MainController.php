@@ -68,6 +68,7 @@ class MainController extends Controller
     public function store(Request $request)
     {
         //
+    
     }
 
     /**
