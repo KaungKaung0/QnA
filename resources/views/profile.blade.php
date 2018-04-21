@@ -291,7 +291,7 @@
 														</table>
 													</div>
 												</div>
-												<h3 class="media-heading">{{$amazing}}<small></small></h3>
+												<h3 class="media-heading">{{$amazing}}<small>Beyond God</small></h3>
 												<span><strong>Knows about: </strong></span>
 												<a href="" class="damn"><span class="label label-warning color-anayahtr">HTML</span></a>
 												<a href="" class="damn"><span class="label label-info color-anayahtr">CSS</span></a>
