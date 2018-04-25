@@ -317,7 +317,7 @@
 				</div>
 
 				<div class="col-md-6">
-					<div id="secondheader_profile">
+					<!-- <div id="secondheader_profile">
 						<br>
 						<h1><i class="fa fa-question-circle"></i>    My Questions</h1>
 					</div>
@@ -331,18 +331,18 @@
 								<tbody>
 									<tr>
 										<th>Q: {{$que->question}}</th>
-
+					
 									</tr>
 								</tbody>
 							</table>
-
+					
 						</div>
-
+					
 						@foreach($a as $ans)
-
+					
 						@if($ans->q_id == $que->q_id)
 						<div id="content2">
-
+					
 							<table class="table">
 								<tbody>
 									<tr scope='row'>
@@ -355,7 +355,7 @@
 							@break
 							@endif
 							@endforeach
-
+					
 							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
 							<button  class="btn btn-dark btn-sm"><i class="fa fa-thumbs-down"></i></button>
 						</div>
@@ -366,14 +366,79 @@
 								<textarea class="form-control answer" rows="2"  name="answer" id="comment" placeholder="  Your Answer Here"> </textarea>
 								<input type="hidden" name="q_id" value="{{$que->q_id}}">
 								<button type="submit" class="btn btn-secondary btn-sm submit-button fa fa-upload">Submit</button>
-
+					
 							</div>
 						</form>	
 						<div id="nyan_sin2">
 							<br>
 						</div>
 					</div>
+					@endforeach -->
+					@foreach($q as $que)
+
+					<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+						<div id="nyan_sin1">
+							<br>
+						</div>
+						<h4 class="white"><i class="fa fa-question-circle"></i>   Question</h4>
+						<div id="username">
+							<div class="row">
+								<div id="profilephoto"></div>
+								<div id="column">
+									<h5>{{$amazing}}</h5>
+									<h6>~~Beyond God~~</h6>
+									<fieldset class="rating">
+										<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+										<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+										<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+										<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+										<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+										<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+										<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+										<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+										<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+										<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+						<div id="content3">
+							<p>{{$que->question}}</p>
+
+							<div id="timedate">
+								<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
+							</div>
+
+						</div>
+						<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
+						@foreach($a as $ans)		
+						@if($ans->q_id == $que->q_id)
+						<div id="username">
+							<div class="row">
+								<div id="profilephoto"></div>
+								<div id="column">
+									<h5>Soe Htet San</h5>
+									<h6>~~Beyond God~~</h6>
+								</div>
+							</div>
+						</div>
+						<div id="content6">
+							<p>{{$ans->answer}}</p>
+						<!-- <button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
+						<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
+						<div id="timedate">
+							<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
+						</div>
+					</div>
+
+
+					@break
+					@endif
 					@endforeach
+					@endforeach
+
+
+					<a href="{{route('questions.index' , ['q_id' => $que->q_id])}}" class="btn btn-secondary btn-sm blah_button">Join</a>
 
 
 				</div>
