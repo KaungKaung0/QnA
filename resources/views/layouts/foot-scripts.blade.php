@@ -52,6 +52,32 @@
  		$("#poof").hide();
  		$("#img-upload").width("225px");
  		$("#img-upload").height("225px");
- 	}); 	
+ 	}); 
+ 		 	$("#star_1").click(function(){
+ 		 		$("#star_1").css("color", "yellow");
+ 		 	});
+ 		 	$("#star_2").click(function(){
+ 		 		$("#star_1").css("color", "yellow");
+ 		 		$("#star_2").css("color", "yellow");
+ 		 	});
+ 		 	$("#star_3").click(function(){
+ 		 		$("#star_1").css("color", "yellow");
+ 		 		$("#star_2").css("color", "yellow");
+ 		 		$("#star_3").css("color", "yellow");
+ 		 	});
+ 		 	$("#star_4").click(function(){
+ 		 		$("#star_1").css("color", "yellow");
+ 		 		$("#star_2").css("color", "yellow");
+ 		 		$("#star_3").css("color", "yellow");
+ 		 		$("#star_4").css("color", "yellow");
+ 		 	});
+ 		 	$("#star_5").click(function(){
+ 		 		$("#star_1").css("color", "yellow");
+ 		 		$("#star_2").css("color", "yellow");
+ 		 		$("#star_3").css("color", "yellow");
+ 		 		$("#star_4").css("color", "yellow");
+ 		 		$("#star_5").css("color", "yellow");
+ 		 	});
+ 	
  	}); 	
  </script>

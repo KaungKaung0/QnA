@@ -54,7 +54,7 @@
 							<div id="column">
 								<h5>Paing Hein Htet</h5>
 								<h6>~~Beyond God~~</h6>
-								<fieldset class="rating">
+								<!-- <fieldset class="rating">
 									<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
 									<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
 									<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -65,7 +65,13 @@
 									<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
 									<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
 									<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-								</fieldset>
+								</fieldset> -->
+								<span class="btn btn-default" id="star_1"><i class="fa fa-star"></i></span>
+								<span class="btn btn-default" id="star_2"><i class="fa fa-star"></i></span>
+								<span class="btn btn-default" id="star_3"><i class="fa fa-star"></i></span>
+								<span class="btn btn-default" id="star_4"><i class="fa fa-star"></i></span>
+								<span class="btn btn-default" id="star_5"><i class="fa fa-star"></i></span>
+
 							</div>
 						</div>
 					</div>
@@ -157,4 +163,7 @@
 		</div>
 	</div>
 </div>
+
+
+
 @endsection

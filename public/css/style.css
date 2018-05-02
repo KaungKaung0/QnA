@@ -557,6 +557,22 @@ h1 { font-size: 1.5em; margin: 10px; }
 	margin-left: 20px;
 }
 
+#star_1{
+	color: grey;
+}
+#star_2{
+	color: grey;
+}
+#star_3{
+	color: grey;
+}
+#star_4{
+	color: grey;
+}
+#star_5{
+	color: grey;
+}
+
 
 @media only screen and (max-width: 720px){
 	.answer{
