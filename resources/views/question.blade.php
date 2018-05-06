@@ -44,7 +44,7 @@
 						</div>
 
 					</div>
-					<form action="{{route('answers.store' , ['place' => 'view'])}}" method="post">
+					{{-- <form action="{{route('answers.store' , ['place' => 'view'])}}" method="post">
 						{{csrf_field()}}
 						<div class="form-group">
 							<textarea class="form-control answer" name="answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
@@ -52,8 +52,8 @@
 							<input type="hidden" name="q_id" value="{{$que->q_id}}">
 							<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
 						</div>
-					</form>
-					{{-- <a href="{{route('t_view')}}" class="btn btn-secondary btn-sm submit-butto">Join n Answer</a> --}}
+					</form> --}}
+					<a href="{{route('t_view')}}" class="btn btn-secondary btn-sm submit-butto">Join n Answer</a>
 					<div id="nyan_sin2">
 						<br>
 					</div>
@@ -85,7 +85,7 @@
 										</div>
 										{{$ans->answer}} <br>
 										<iframe name="question" style="display: none;"></iframe>
-										<form action="{{route('ansrate')}}" method="POST" target="question">
+										<form action="{{route('ansrate')}}" method="POST" target="question	">
 											{{csrf_field()}}
 											<input type="hidden" name="id" value="{{$ans->id}}">
 											<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
