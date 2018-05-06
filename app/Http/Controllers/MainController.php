@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Question;
 use App\Answer;
 use Auth;
-
+use App\User;
 class MainController extends Controller
 {
 
@@ -41,12 +41,25 @@ class MainController extends Controller
         }
        else
        {
-            $a = Answer::get();
        
+            $a = Answer::orderBy('up_vote' ,'desc')->get();
+       $u = User::select('id' , 'name')->get();
+       $f =0 ;
+      
+       $array[][] = array();
+       foreach ($u as $query) {
+           # code...
+         $s =0;
+        $array[$f][$s] = $query->id;
+        $s++;
+        $array[$f][$s] = $query->name;
+        $f++;
+       }
+        
         $q = Question::paginate('5');
          
         
-        return view('main' , compact( 'a','q'));
+        return view('main' , compact( 'a','q' ,'u'));
     }
     }
     /**

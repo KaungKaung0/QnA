@@ -24,7 +24,7 @@ class QuestionController extends Controller
 
     public function index(Request $request)
     {
-        $a = Answer::get();
+        $a = Answer::orderBy('up_vote','desc')->get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
 
         return view('question' , compact('a' , 'q'));
@@ -59,6 +59,10 @@ class QuestionController extends Controller
         'question' => $validated_data['question'],
         'q_id'     => $q_id,
         'user_id'  => \Auth::user()->id,
+        'viewer_count' =>0,
+        'count'   =>0,
+        'total'   => 0,
+        'avg'     =>0
 
     ]);
        $place = $request->place;

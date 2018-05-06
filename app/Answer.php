@@ -8,7 +8,7 @@ class Answer extends Model
 {
     //
     protected $fillable = [
-    	'answer', 'q_id' , 'user_id' , 
+    	'answer', 'q_id' , 'user_id' , 'up_vote' , 'down_vote'
     ];
 
     protected $hidden = [

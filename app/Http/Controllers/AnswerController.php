@@ -51,6 +51,8 @@ class AnswerController extends Controller
         'answer' => $validated_data['answer'],
         'q_id'     => $request->q_id,
         'user_id' => \Auth::user()->id,
+        'up_vote' => 0,
+        'down_vote' => 0,
     ]);
        $place = $request->place;
        switch ($place) {

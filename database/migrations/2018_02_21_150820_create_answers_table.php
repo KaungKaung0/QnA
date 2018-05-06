@@ -18,6 +18,8 @@ class CreateAnswersTable extends Migration
             $table->string('answer');
             $table->string('user_id');
             $table->string('q_id');
+            $table->integer('up_vote');
+            $table->integer('down_vote');
             $table->timestamps();
         });
     }

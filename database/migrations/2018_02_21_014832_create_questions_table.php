@@ -18,6 +18,10 @@ class CreateQuestionsTable extends Migration
             $table->string('question');
             $table->string('q_id');
             $table->string('user_id');
+            $table->integer('viewer_count');
+            $table->integer('count');
+            $table->integer('total');
+            $table->decimal('avg' , 3,1);
             $table->timestamps();
         });
     }

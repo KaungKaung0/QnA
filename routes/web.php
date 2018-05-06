@@ -41,6 +41,10 @@ Route::get('/t_view' , function(){
 })->name('t_view');
 
 
+Route::post('/questrating' , 'RatingController@questrating')->name('qrate');
+Route::post('/ansrating' , 'RatingController@ansrating')->name('ansrate');
+
+
 
 
 

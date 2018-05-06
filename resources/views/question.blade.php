@@ -44,7 +44,7 @@
 						</div>
 
 					</div>
-					<!-- <form action="{{route('answers.store' , ['place' => 'view'])}}" method="post">
+					<form action="{{route('answers.store' , ['place' => 'view'])}}" method="post">
 						{{csrf_field()}}
 						<div class="form-group">
 							<textarea class="form-control answer" name="answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
@@ -52,9 +52,8 @@
 							<input type="hidden" name="q_id" value="{{$que->q_id}}">
 							<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
 						</div>
-					</form> -->
-					<!-- <button type="button" href="{{route('t_view')}}" class="btn btn-secondary btn-sm submit-button">Join n Answer</button> -->
-					<a href="{{route('t_view')}}" class="btn btn-secondary btn-sm submit-butto">Join n Answer</a>
+					</form>
+					{{-- <a href="{{route('t_view')}}" class="btn btn-secondary btn-sm submit-butto">Join n Answer</a> --}}
 					<div id="nyan_sin2">
 						<br>
 					</div>
@@ -75,18 +74,27 @@
 									@if($ans->q_id == $que->q_id)
 									<td>
 										
-											<div id="username_table">
-												<div class="row">
-													<div id="profilephoto"></div>
-													<div id="column">
-														<h5>Soe Htet San</h5>
-														<h6>~~Beyond God~~</h6>
-													</div>
+										<div id="username_table">
+											<div class="row">
+												<div id="profilephoto"></div>
+												<div id="column">
+													<h5>Soe Htet San</h5>
+													<h6>~~Beyond God~~</h6>
 												</div>
 											</div>
-											{{$ans->answer}} <br> <button id = "success" class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i> </button>
-											<button id="danger" class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button>
-											<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
+										</div>
+										{{$ans->answer}} <br>
+										<iframe name="question" style="display: none;"></iframe>
+										<form action="{{route('ansrate')}}" method="POST" target="question">
+											{{csrf_field()}}
+											<input type="hidden" name="id" value="{{$ans->id}}">
+											<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
+											<button type="submit" class="btn btn-secondary btn-sm" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i></button>
+										</form>
+										<p>{{$ans->up_vote}}</p>
+										<div id="timedate">
+											<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
+										</div>
 									</td>
 									@endif
 								</tr>
