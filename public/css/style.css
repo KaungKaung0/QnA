@@ -436,6 +436,9 @@
 .may_kyi{
 	text-align: center;
 }
+#t_editor{
+	width: 100%;
+}
 
 
 /* rating star */
