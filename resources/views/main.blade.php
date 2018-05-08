@@ -72,29 +72,29 @@
 							<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
 						</fieldset> -->
 						<fieldset class="rating">
-						<label class="container">
+						<label class="container1">
 						<input type="radio" name="rating" value="1" >
-							<span class="checkmark"></span>
+							<span <i class="checkmark fa fa-star change-star-color"></i></span>
 						</label>
 
-						<label class="container">
+						<label class="container1">
 							<input type="radio" name="rating" value="2">
-							<span class="checkmark"></span>
+							<span <i class="checkmark fa fa-star change-star-color"></i></span>
 						</label>
 
-						<label class="container">
+						<label class="container1">
 							<input type="radio" name="rating" value="3">
-							<span class="checkmark"></span>
+							<span <i class="checkmark fa fa-star change-star-color"></i></span>
 						</label>
 
-						<label class="container">
+						<label class="container1">
 							<input type="radio" name="rating" value="4">
-							<span class="checkmark"></span>
+							<span <i class="checkmark fa fa-star change-star-color"></i></span>
 						</label>
 
-						<label class="container">
+						<label class="container1">
 							<input type="radio" name="rating" value="5">
-							<span class="checkmark"></span>
+							<span <i class="checkmark fa fa-star change-star-color"></i></span>
 						</label>
 						</fieldset>
 						<button type="submit"  id="rtsub">submit</button>
