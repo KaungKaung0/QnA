@@ -22,7 +22,7 @@
 									<th scope="row">Name</th>
 									<td>-</td>
 									
-									<td>{{$amazing}}</td>
+									<td>{{$user}}</td>
 								</tr>
 								<tr>
 									<th scope="row">Major</th>
@@ -174,7 +174,7 @@
 	
 							</div>
 							<div class="username">
-							<h2>{{$amazing}} <small><i class="fa fa-map-marker"></i> GOD</small></h2>
+							<h2>{{$user}} <small><i class="fa fa-map-marker"></i> GOD</small></h2>
 								<p><i class="fa fa-briefcase"></i> Web Design and Development.</p>
 	
 								<a href="https://web.facebook.com/iamgurdeeposahan" target="_blank" class="btn-o"> <i class="fa fa-user-plus"></i> Add Friend </a>
@@ -280,18 +280,27 @@
 												<img id='img-upload'/>
 												<div id="poof">
 													<div class="profile_box">
+														
 														<table style="height: 225px;">
 															<tbody>
 																<tr>
-																	<td class="align-middle"><span class="btn btn-default btn-file" id="change_this">
-																		<i class="fa fa-plus-circle" style="font-size:150px;"></i> <input type="file" id="imgInp">
-																	</span></td>
+																	@if($picexit == 1)
+																	<img src="{{asset("img/$profile" )}}" alt="" width="225px" height="225px">
+																	@else
+																	<form enctype="multipart/form-data"  action="{{route('ppupload')}}" method="POST">
+																		{{csrf_field()}}
+																		<td class="align-middle"><span class="btn btn-default btn-file" id="change_this">
+																			<i class="fa fa-plus-circle" style="font-size:150px;"></i> <input type="file" id="imgInp" name="pp">
+																		</span></td>
+																		<input type="submit" style="display: none;" name="upload">
+																	</form>
+																	@endif
 																</tr>
 															</tbody>
 														</table>
 													</div>
 												</div>
-												<h3 class="media-heading">{{$amazing}}<small>Beyond God</small></h3>
+												<h3 class="media-heading">{{$user}}<small>Beyond God</small></h3>
 												<span><strong>Knows about: </strong></span>
 												<a href="" class="damn"><span class="label label-warning color-anayahtr">HTML</span></a>
 												<a href="" class="damn"><span class="label label-info color-anayahtr">CSS</span></a>
@@ -302,21 +311,21 @@
 											<hr>
 											<center>
 												<p class="text-left"><strong>Bio: </strong><br>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
-													<br>
-												</center>
-											</div>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+												<br>
+											</center>
 										</div>
 									</div>
-
 								</div>
 
 							</div>
+
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="col-md-6">
+			<div class="col-md-6">
 					<!-- <div id="secondheader_profile">
 						<br>
 						<h1><i class="fa fa-question-circle"></i>    My Questions</h1>
@@ -385,7 +394,7 @@
 							<div class="row">
 								<div id="profilephoto"></div>
 								<div id="column">
-									<h5>{{$amazing}}</h5>
+									<h5>{{$user}}</h5>
 									<h6>~~Beyond God~~</h6>
 									<fieldset class="rating">
 										<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -425,25 +434,25 @@
 						<div id="content6">
 							<p>{{$ans->answer}}</p>
 						<!-- <button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
-						<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
-						<div id="timedate">
-							<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
+							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
+							<div id="timedate">
+								<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
+							</div>
 						</div>
+							
+						<a href="{{route('questions.index' , ['q_id' => $que->q_id])}}" class="btn btn-secondary btn-sm blah_button">Join</a>
+
+
+
+						@break
+						@endif
+						@endforeach
+						@endforeach
+
+
 					</div>
-
-
-					@break
-					@endif
-					@endforeach
-					@endforeach
-
-
-					<a href="{{route('questions.index' , ['q_id' => $que->q_id])}}" class="btn btn-secondary btn-sm blah_button">Join</a>
-
-
 				</div>
 			</div>
-		</div>
 
 
-		@endsection 
+			@endsection 

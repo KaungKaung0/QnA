@@ -31,6 +31,7 @@ Route::resource('registers' , 'RegisterController');
 Route::get('/profile', 'ProfileController@index')-> name('profile');
 Route::get('/aboutus', 'AboutusController@index') -> name('aboutus');
 Route::get('logout', 'MainController@logout' );
+
 Route::get('resign' , function(){
 	auth()->logout();
 	return redirect('register');
@@ -45,6 +46,7 @@ Route::post('/questrating' , 'RatingController@questrating')->name('qrate');
 Route::post('/ansrating' , 'RatingController@ansrating')->name('ansrate');
 
 
+Route::post('/ppupload' , 'ProfileController@pp')->name('ppupload');
 
 
 
