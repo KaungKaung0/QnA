@@ -59,17 +59,43 @@
 								<h3>{{$user->name}}</h3>
 								@endif
 								@endforeach
-							
-					<h6>~~Beyond God~~</h6>
 
-					<form action="{{route('qrate' , ['q_id' => $que->q_id])}}" method="POST">
-						{{csrf_field()}}
-						<fieldset class="rating">
+								<h6>~~Beyond God~~</h6>
+
+								<form action="{{route('qrate' , ['q_id' => $que->q_id])}}" method="POST">
+									{{csrf_field()}}
+						<!-- <fieldset class="rating">
 							<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
 							<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
 							<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
 							<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>	
 							<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+						</fieldset> -->
+						<fieldset class="rating">
+						<label class="container">
+						<input type="radio" name="rating" value="1" >
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="container">
+							<input type="radio" name="rating" value="2">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="container">
+							<input type="radio" name="rating" value="3">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="container">
+							<input type="radio" name="rating" value="4">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="container">
+							<input type="radio" name="rating" value="5">
+							<span class="checkmark"></span>
+						</label>
 						</fieldset>
 						<button type="submit"  id="rtsub">submit</button>
 					</form>
@@ -93,10 +119,10 @@
 				<div id="profilephoto"></div>
 				<div id="column">
 					@foreach($u as $user)
-								@if($user->id == $ans->user_id)
-								<h3>{{$user->name}}</h3>
-								@endif
-								@endforeach
+					@if($user->id == $ans->user_id)
+					<h3>{{$user->name}}</h3>
+					@endif
+					@endforeach
 					<h6>~~Beyond God~~</h6>
 				</div>
 			</div>
