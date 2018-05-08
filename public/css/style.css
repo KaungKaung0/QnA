@@ -290,57 +290,55 @@
 
 /* 
 	For Key BLade
- */
+	*/
 
- .key
- {
- 	margin-top: 50px;
- }
+	.key
+	{
+		margin-top: 50px;
+	}
 
- .blur_control {
-  background: url('Material_BackGround.png') no-repeat center center ;
-  margin-bottom: 10px;
-  height: 650px;
-  background-size: cover;
-  overflow: hidden;
-}
+	.blur_control {
+		background: url('Material_BackGround.png') no-repeat center center ;
+		margin-bottom: 10px;
+		height: 650px;
+		background-size: cover;
+		overflow: hidden;
+	}
 
-.main_box{
-	margin-top: 100px;
-	filter: none;
-}
+	.main_box{
+		margin-top: 100px;
+		filter: none;
+	}
 
-.blur {
-  background: url('Material_BackGround.png') no-repeat center center;
-  background-size: cover;
-  overflow: hidden;
-  filter: blur(25px);
-  position: absolute;
-  height: 200px;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
-}
+	.blur {
+		background: url('Material_BackGround.png') no-repeat center center;
+		background-size: cover;
+		overflow: hidden;
+		filter: blur(25px);
+		position: absolute;
+		height: 200px;
+		top: -50px;
+		left: -50px;
+		right: -50px;
+		bottom: -50px;
+	}
 
-.widget {
-  border-top: 2px solid rgba(255, 255, 255, .5);
-  border-bottom: 2px solid rgba(255, 255, 255, .5);
-  height: 200px;
-  width: 100%;
-  overflow: hidden;
-}
+	.widget {
+		border-top: 2px solid rgba(255, 255, 255, .5);
+		border-bottom: 2px solid rgba(255, 255, 255, .5);
+		height: 200px;
+		width: 100%;
+		overflow: hidden;
+	}
 
-.center {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-
+	.center {
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 
 
 
@@ -348,115 +346,116 @@
 
 
 
-.text {
-  height: 200px;
-  width: 340px;
-}
-
-.text h1 {
-  text-align: center;
-  text-shadow: 1px 1px rgba(0, 0, 0, .1);
-  color: #ffffff;
-  margin-top: 57px;
-  font-family: 'Lora', serif;
-  font-weight: 700;
-  font-size: 38px;
-}
-
-.text p {
-  text-align: center;
-  color: #ffffff;
-  text-shadow: 1px 1px rgba(0, 0, 0, .1);
-  margin-top: 0px;
-  font-family: 'Lato', serif;
-  font-weight: 400;
-  font-size: 22px;
-}
-
-.box_3{
-	background-color: white;
-	border-radius: 2px;
-	box-shadow: 0 0px 0px 0 black, 0 0px 2px 0 black;
-	margin-top: 150px;
-	margin-bottom: 10px;
-}
-
-#content5{
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 10px;
-	padding-left: 5px;
-	background-color: #009688;
-	box-shadow: 2px 2px;
-	border-radius: 2px;
-	padding-bottom: 10px;
-}
-
-.white{
-	color: white;
-}
-
-.question_id_main{
-	margin-top: 20px;
-	height: 100px;
-	margin-left: 10px;
-	margin-right: 10px;
-	width: 670px;
-}
-
-.question_id{
-	margin-top: 20px;
-	height: 250px;
-}
 
 
-.init{
-	font-size: 30px;
-	color: white;
-	font-family: 'Krona One', sans-serif;
-}
+	.text {
+		height: 200px;
+		width: 340px;
+	}
 
-.q_tab{
-	background-color: #009688;
-	height: 40px;
-	width: 40px;
-	margin-top: 2px;
-}
+	.text h1 {
+		text-align: center;
+		text-shadow: 1px 1px rgba(0, 0, 0, .1);
+		color: #ffffff;
+		margin-top: 57px;
+		font-family: 'Lora', serif;
+		font-weight: 700;
+		font-size: 38px;
+	}
 
-.font_p{
-	height: 47px;
-	text-align: center;
-}
+	.text p {
+		text-align: center;
+		color: #ffffff;
+		text-shadow: 1px 1px rgba(0, 0, 0, .1);
+		margin-top: 0px;
+		font-family: 'Lato', serif;
+		font-weight: 400;
+		font-size: 22px;
+	}
 
-.blah_button{
-	margin-top: 6px;
-	margin-left: 8px;
-}
+	.box_3{
+		background-color: white;
+		border-radius: 2px;
+		box-shadow: 0 0px 0px 0 black, 0 0px 2px 0 black;
+		margin-top: 150px;
+		margin-bottom: 10px;
+	}
 
-.may_kyi{
-	text-align: center;
-}
-#t_editor{
-	width: 100%;
-}
+	#content5{
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 10px;
+		padding-left: 5px;
+		background-color: #009688;
+		box-shadow: 2px 2px;
+		border-radius: 2px;
+		padding-bottom: 10px;
+	}
+
+	.white{
+		color: white;
+	}
+
+	.question_id_main{
+		margin-top: 20px;
+		height: 100px;
+		margin-left: 10px;
+		margin-right: 10px;
+		width: 670px;
+	}
+
+	.question_id{
+		margin-top: 20px;
+		height: 250px;
+	}
 
 
-/* rating star */
+	.init{
+		font-size: 30px;
+		color: white;
+		font-family: 'Krona One', sans-serif;
+	}
 
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+	.q_tab{
+		background-color: #009688;
+		height: 40px;
+		width: 40px;
+		margin-top: 2px;
+	}
 
-fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
+	.font_p{
+		height: 47px;
+		text-align: center;
+	}
 
-/****** Style Star Rating Widget *****/
+	.blah_button{
+		margin-top: 6px;
+		margin-left: 8px;
+	}
 
-.rating { 
-  border: none;
-  float: left;
-}
+	.may_kyi{
+		text-align: center;
+	}
+	#t_editor{
+		width: 100%;
+	}
 
-.rating > input { display: none; } 
+
+	rating star
+
+	@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+	fieldset, label { margin: 0; padding: 0; }
+	body{ margin: 20px; }
+	h1 { font-size: 1.5em; margin: 10px; }
+
+	***** Style Star Rating Widget ****
+	.rating { 
+		border: none;
+		float: left;
+	}
+
+/* .rating > input { display: none; } 
 .rating > label:before { 
   margin: 5px;
   font-size: 1.25em;
@@ -475,16 +474,15 @@ h1 { font-size: 1.5em; margin: 10px; }
  float: right; 
 }
 
-/***** CSS Magic to Highlight Stars on Hover *****/
 
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
 
-.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label, 
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } 
+.rating > input:checked + label:hover, 
 .rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.rating > label:hover ~ input:checked ~ label, 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } */
 /* style for profile */
 
 .profile_box{
@@ -499,23 +497,23 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 /* profile upload*/
 .btn-file {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
 .btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
 }
 
 .navbar-icon{
@@ -581,3 +579,77 @@ h1 { font-size: 1.5em; margin: 10px; }
 		width: 250px;
 	}
 }
+
+/* RATING */
+/* #star5{
+	z-index: -100;
+	} */
+
+
+	/* Customize the label (the container) */
+	.container1 {
+		display: inline;
+		position: relative;
+		padding-left: 10px;
+		margin-right: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	/* Hide the browser's default checkbox */
+	.container1 input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+	}
+.change-star-color{
+	color: #ddd;
+}
+
+.change-star-color:hover{
+	color: yellow;
+}
+
+}
+	/* Create a custom checkbox */
+	.checkmark {
+		display: none;
+		margin-right: 10px;
+	}
+
+	/* On mouse-over, add a grey background color */
+	
+
+	/* When the checkbox is checked, add a blue background */
+	.container1 input:checked ~ .checkmark {
+		color: yellow;
+	}
+
+	/* Create the checkmark/indicator (hidden when not checked) */
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+
+	/* Show the checkmark when checked */
+	.container1 input:checked ~ .checkmark:after {
+		display: block;
+	}
+
+	/* Style the checkmark/indicator */
+	/* .container1 .checkmark:after {
+		left: 9px;
+		top: 5px;
+		width: 5px;
+		height: 10px;
+		border: solid white;
+		border-width: 0 3px 3px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	} */
