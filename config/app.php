@@ -151,7 +151,7 @@ return [
          * Package Service Providers...
          */
             Laracasts\Flash\FlashServiceProvider::class,
-            Intervention\Image\ImageServiceProvider::class
+            Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
