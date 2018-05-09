@@ -286,6 +286,9 @@
 																<tr>
 																	@if($picexit == 1)
 																	<img src="{{asset("img/$profile" )}}" alt="" width="225px" height="225px">
+																	
+																	<a href="{{route('ppdelete')}}" id="ppdelete" class="btn btn-danger" name="edit">Edit Profile Picture </a>
+																	
 																	@else
 																	<form enctype="multipart/form-data"  action="{{route('ppupload')}}" method="POST">
 																		{{csrf_field()}}
@@ -296,6 +299,7 @@
 																	</form>
 																	@endif
 																</tr>
+
 															</tbody>
 														</table>
 													</div>

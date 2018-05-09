@@ -47,10 +47,8 @@
  			$("#img-upload").width("225px");
  			$("#img-upload").height("225px");
  		}); 
- 		//Rating
- 		/*$("input[name='rating']").click(function(){
- 			$("#rtsub").trigger("click");
- 		});*/
+ 		
+ 		
  		
  	}); 	 	
  </script>

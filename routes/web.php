@@ -47,8 +47,11 @@ Route::post('/ansrating' , 'RatingController@ansrating')->name('ansrate');
 
 
 Route::post('/ppupload' , 'ProfileController@pp')->name('ppupload');
+Route::get('ppdelete' , 'ProfileController@ppdelete')->name('ppdelete');
 
 
 
+/*search route*/
 
-
+Route::post('/search' , 'SearchController@search')->name('search');
+Route::get('/result'  , 'SearchControlelr@result')->name('result');

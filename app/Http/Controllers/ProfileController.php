@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\Question;
 use App\Answer;
@@ -10,6 +11,7 @@ use App\Answer;
 class ProfileController extends Controller
 {
     public function index(){
+
         $user = \Auth::user()->name;
         $profile = \Auth::user()->profile_pic;
 
@@ -41,6 +43,13 @@ class ProfileController extends Controller
         $request->pp->move(public_path('img') , $photoName);
 
         return redirect('profile');	
+    }
+    public function ppdelete(){
+        $profile = \Auth::user()->profile_pic;
+        unlink('img/' . $profile);
+        
+
+        return redirect('profile');
     }
 }
 

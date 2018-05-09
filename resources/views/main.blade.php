@@ -177,7 +177,11 @@
 		</div>
 		<div id="content1">
 			<p><br></p>
-			<h2 class="may_kyi">Advertise Here</h2>
+			<form action="{{route('search')}}" method="post">
+				{{csrf_field()}}
+				<input type="text" name="search" width="50%">
+				<button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
+			</form>
 			<p><br></p>
 		</div>
 		<div id="nyan_sin2">
