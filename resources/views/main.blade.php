@@ -67,37 +67,7 @@
 
 								<h6>~~Beyond God~~</h6>
 
-								<form action="{{route('qrate' , ['q_id' => $que->q_id])}}" method="POST">
-									{{csrf_field()}}
-						
-						<fieldset class="rating">
-						<label class="container1">
-						<input  type="radio" name="rating" value="1" >
-							<span <i  id="star001" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
-
-						<label class="container1">
-							<input  type="radio" name="rating" value="2">
-							<span <i  id="star002" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
-
-						<label class="container1">
-							<input type="radio" name="rating" value="3">
-							<span <i id="star003" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
-
-						<label class="container1">
-							<input type="radio" name="rating" value="4">
-							<span <i id="star004" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
-
-						<label class="container1">
-							<input type="radio" name="rating" value="5">
-							<span <i id="star005" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
-						</fieldset>
-						<button type="submit"  id="rtsub">submit</button>
-					</form>
+								
 
 				</div>
 			</div>
