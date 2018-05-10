@@ -612,11 +612,12 @@ img{
 	color: #ddd;
 }
 
+
 .change-star-color:hover{
 	color: yellow;
 }
 
-}
+
 	/* Create a custom checkbox */
 	.checkmark {
 		display: none;
@@ -655,3 +656,7 @@ img{
 		-ms-transform: rotate(45deg);
 		transform: rotate(45deg);
 	} */
+
+img{
+	border-radius: 100%;
+}

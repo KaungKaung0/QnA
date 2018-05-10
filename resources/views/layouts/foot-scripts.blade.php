@@ -47,7 +47,34 @@
  			$("#img-upload").width("225px");
  			$("#img-upload").height("225px");
  		}); 
- 		
+ 		$("#star002").click(function(){
+ 			$('input:radio[name=sex]:nth(0)').attr('checked',false);
+ 			$("#star001").css("color", "yellow");
+ 		});
+ 		$("#star003").click(function(){
+ 			$('input:radio[name=sex]:nth(0)').attr('checked',false);
+ 			$('input:radio[name=sex]:nth(1)').attr('checked',false);
+ 			$("#star001").css("color", "yellow");
+ 			$("#star002").css("color", "yellow");
+ 		});
+ 		$("#star004").click(function(){
+ 			$('input:radio[name=sex]:nth(0)').attr('checked',false);
+ 			$('input:radio[name=sex]:nth(1)').attr('checked',false);
+ 			$('input:radio[name=sex]:nth(2)').attr('checked',false);
+ 			$("#star001").css("color", "yellow");
+ 			$("#star002").css("color", "yellow");
+ 			$("#star003").css("color", "yellow");
+ 		})
+ 		$("#star005").click(function(){
+ 			$('input:radio[name=sex]:nth(0)').attr('checked',false);
+ 			$('input:radio[name=sex]:nth(1)').attr('checked',false);
+ 			$('input:radio[name=sex]:nth(2)').attr('checked',false);
+ 			$('input:radio[name=sex]:nth(3)').attr('checked',false);
+ 			$("#star001").css("color", "yellow");
+ 			$("#star002").css("color", "yellow");
+ 			$("#star003").css("color", "yellow");
+ 			$("#star004").css("color", "yellow");
+ 		})
  		
  		
  	}); 	 	
