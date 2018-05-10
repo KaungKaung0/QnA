@@ -34,7 +34,7 @@ class RatingController extends Controller
     	$avg   = round( $total/$count, 1);
     	$question->avg = $avg;
     	$question->save();
-    	
+    	return redirect()->route('questions.index' , ['q_id' => $request->q_id]);
     }
 
     public function ansrating(Request $request){
