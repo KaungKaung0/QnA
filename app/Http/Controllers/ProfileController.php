@@ -18,16 +18,16 @@ class ProfileController extends Controller
         $user_id = \Auth::user()->id;
         $a = Answer::get();
         $q = Question::where('user_id' , $user_id)->paginate('5');
-
+        $u = User::select('id' , 'name' , 'profile_pic')->get();
         // checking profile pic
 
         if(file_exists('img/' . $profile )) {
             $picexit =1;
-             return view('profile' ,compact( 'a' , 'q', 'user' , 'picexit' , 'profile'));
+             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit' , 'profile'));
 
         } else {
             $picexit =0;
-             return view('profile' ,compact( 'a' , 'q', 'user' , 'picexit'));
+             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit'));
         }
         
        

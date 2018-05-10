@@ -52,10 +52,15 @@
 					<h4 class="white"><i class="fa fa-question-circle"></i>   Question</h4>
 					<div id="username">
 						<div class="row">
-							<div id="profilephoto"></div>
+							@foreach($u as $user)
+							@if($user->id == $que->user_id)
+							@php
+							$profile_pic=$user->profile_pic;
+							@endphp
+							<div id="profilephoto">
+								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+							</div>
 							<div id="column">
-								@foreach($u as $user)
-								@if($user->id == $que->user_id)
 								<h3>{{$user->name}}</h3>
 								@endif
 								@endforeach

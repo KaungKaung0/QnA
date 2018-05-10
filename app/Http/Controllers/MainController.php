@@ -43,18 +43,8 @@ class MainController extends Controller
        {
        
             $a = Answer::orderBy('up_vote' ,'desc')->get();
-       $u = User::select('id' , 'name')->get();
-       $f =0 ;
+       $u = User::select('id' , 'name' , 'profile_pic')->get();
       
-       $array[][] = array();
-       foreach ($u as $query) {
-           # code...
-         $s =0;
-        $array[$f][$s] = $query->id;
-        $s++;
-        $array[$f][$s] = $query->name;
-        $f++;
-       }
         
         $q = Question::paginate('5');
          
