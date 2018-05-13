@@ -58,7 +58,11 @@
 							$profile_pic=$user->profile_pic;
 							@endphp
 							<div id="profilephoto">
+								@if(is_null($profile_pic))
+								<img src="" alt="" width="50px" height="50px">
+								@else
 								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+								@endif
 							</div>
 							<div id="column">
 								<h3>{{$user->name}}</h3>
@@ -85,9 +89,9 @@
 					<div id="username">
 						<div class="row">
 							@foreach($u as $user)
-								@if($user->id == $ans->user_id)
+							@if($user->id == $ans->user_id)
 							@php
-								$profile_pic = $user->profile_pic;
+							$profile_pic = $user->profile_pic;
 							@endphp
 							<div id="profilephoto">
 								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
