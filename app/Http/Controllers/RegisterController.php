@@ -52,7 +52,9 @@ class RegisterController extends Controller
             'password' => bcrypt($validated_data['password']),
             'confirmed' => 0,
             'confirmation' => $confirmation,
-            'profile_pic'  => " "
+            'profile_pic'  => " ",
+            'role'   =>'noobie',
+            'exp' => 0,
         ]);
         $this->guard()->login($users);
 

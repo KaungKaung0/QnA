@@ -14,6 +14,7 @@ class ProfileController extends Controller
 
         $user = \Auth::user()->name;
         $profile = \Auth::user()->profile_pic;
+        $role = \Auth::user()->role;
 
         $user_id = \Auth::user()->id;
         $a = Answer::get();
@@ -23,18 +24,18 @@ class ProfileController extends Controller
 
         if(file_exists('img/' . $profile )) {
             $picexit =1;
-             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit' , 'profile'));
+             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit' , 'profile' , 'role'));
 
         } else {
             $picexit =0;
-             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit'));
+             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit' , 'role'));
         }
         
        
     }
 
     public function pp(Request $request){
-        $user = \Auth::user()->name;
+        $user = \Auth::user()->id;
         $photoName = $user.'.'.$request->pp->getClientOriginalExtension();
 
         $profile = \Auth::user();

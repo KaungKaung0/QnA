@@ -84,10 +84,16 @@
 					@if($ans->q_id == $que->q_id)
 					<div id="username">
 						<div class="row">
-							<div id="profilephoto"></div>
-							<div id="column">
-								@foreach($u as $user)
+							@foreach($u as $user)
 								@if($user->id == $ans->user_id)
+							@php
+								$profile_pic = $user->profile_pic;
+							@endphp
+							<div id="profilephoto">
+								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+							</div>
+							<div id="column">
+								
 								<h3>{{$user->name}}</h3>
 								@endif
 								@endforeach
@@ -98,7 +104,7 @@
 					<div id="content6">
 						<p>{{$ans->answer}}</p>
 						<iframe name="main" style="display: none;"></iframe>
-						<form action="{{route('ansrate')}}" method="POST" target="main ">
+						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" target="main ">
 							{{csrf_field()}}
 							<input type="hidden" name="id" value="{{$ans->id}}">
 							<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>

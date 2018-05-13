@@ -17,7 +17,7 @@
 						<img src="{{asset("img/$profile" )}}" alt="" width="200px" height="200px">
 
 						
- 
+
 						@else
 						<form enctype="multipart/form-data"  action="{{route('ppupload')}}" method="POST">
 							{{csrf_field()}}
@@ -35,14 +35,14 @@
 					<table class="table">
 						<tbody>
 							<tr>
-								<th scope="row">Developer Name</th>
+								<th scope="row">User Name</th>
 								<td>-</td>
-								<td>Kaung Khant Thu</td>
+								<td>{{$user}}</td>
 							</tr>
 							<tr>
 								<th scope="row">Role</th>
 								<td>-</td>
-								<td>Project Manager</td>
+								<td>{{$role}}</td>
 							</tr>
 							<tr>
 								<th scope="row">Portfolio</th>
@@ -113,50 +113,46 @@
 					<div class="row">
 
 						@foreach($u as $user)
-							@if($user->id == $que->user_id)
-							@php
-							$profile_pic=$user->profile_pic;
-							@endphp
-							<div id="profilephoto">
-								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
-							</div>
-							<h5>{{$user->name}}</h5>
-								@endif
-								@endforeach	
-							<h6>~~Beyond God~~</h6>
-							<fieldset class="rating">
-								<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-								<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-								<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-								<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-								<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-								<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-								<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-								<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-								<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-								<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-							</fieldset>
+						@if($user->id == $que->user_id)
+						@php
+						$profile_pic=$user->profile_pic;
+						@endphp
+						<div id="profilephoto">
+							<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
 						</div>
+						<h5>{{$user->name}}</h5>
+						@endif
+						@endforeach	
+						<h6>~~Beyond God~~</h6>
 					</div>
 				</div>
-				<div id="content3">
-					<p>{{$que->question}}</p>
+			</div>
+			<div id="content3">
+				<p>{{$que->question}}</p>
 
-					<div id="timedate">
-						<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
-					</div>
-
+				<div id="timedate">
+					<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>
 				</div>
-				<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
-				@foreach($a as $ans)		
-				@if($ans->q_id == $que->q_id)
-				<div id="username">
-					<div class="row">
-						<div id="profilephoto"></div>
-						<div id="column">
-							<h5>Soe Htet San</h5>
-							<h6>~~Beyond God~~</h6>
-						</div>
+
+			</div>
+			<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
+			@foreach($a as $ans)		
+			@if($ans->q_id == $que->q_id)
+			<div id="username">
+				<div class="row">
+					@foreach($u as $user)
+					@if($user->id == $ans->user_id)
+					@php
+					$profile_pic = $user->profile_pic;
+					@endphp
+					<div id="profilephoto">
+						<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+					</div>
+					<div id="column">
+
+						<h3>{{$user->name}}</h3>
+						@endif
+						@endforeach
 					</div>
 				</div>
 				<div id="content6">
@@ -164,7 +160,7 @@
 						<!-- <button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
 							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
 							<div id="timedate">
-								<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
+								<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
 							</div>
 						</div>
 

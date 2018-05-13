@@ -17,10 +17,19 @@
 					<h4 class="white"><i class="fa fa-question-circle"></i>   Question</h4>
 					<div id="username">
 						<div class="row">
-							<div id="profilephoto"></div>
+							@foreach($u as $user)
+							@if($user->id == $que->user_id)
+							@php
+							$profile_pic = $user->profile_pic;
+							@endphp
+							<div id="profilephoto">
+								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+							</div>
 							<div id="column">
-								<h5>Paing Hein Htet</h5>
+								<h5>{{$user->name}}</h5>
 								<h6>~~Beyond God~~</h6>
+								@endif
+								@endforeach
 								<form action="{{route('qrate' , ['q_id' => $que->q_id])}}" method="POST">
 									{{csrf_field()}}
 									
@@ -59,7 +68,7 @@
 						<p>{{$que->question}}</p>
 
 						<div id="timedate">
-							<p><i class="fa fa-clock-o"></i>    14:38    <i class="fa fa-calendar"></i>    27/4/18</p>
+							<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>
 						</div>
 
 					</div>
@@ -100,9 +109,19 @@
 									
 									<div id="username_table">
 										<div class="row">
-											<div id="profilephoto"></div>
+											@foreach($u as $user)
+											@if($user->id == $ans->user_id)
+											@php
+											$profile_pic = $user->profile_pic;
+											@endphp
+											<div id="profilephoto">
+												<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+											</div>
 											<div id="column">
-												<h5>Soe Htet San</h5>
+
+												<h3>{{$user->name}}</h3>
+												@endif
+												@endforeach
 												<h6>~~Beyond God~~</h6>
 											</div>
 										</div>

@@ -26,8 +26,9 @@ class QuestionController extends Controller
     {
         $a = Answer::orderBy('up_vote','desc')->get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
+        $u = User::select('id' , 'name' , 'profile_pic')->get();
 
-        return view('question' , compact('a' , 'q'));
+        return view('question' , compact('a' , 'q' , 'u'));
     }
 
     /**

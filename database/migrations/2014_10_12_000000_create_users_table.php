@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->boolean('confirmed')->default(0);
             $table->integer('confirmation')->nullable();
             $table->string('profile_pic')->nullable();
+            $table->string('role');
+            $table->integer('exp');
             $table->rememberToken();
             $table->timestamps();
         });
