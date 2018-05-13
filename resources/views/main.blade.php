@@ -111,7 +111,7 @@
 			<p>{{$que->question}}</p>
 
 			<div id="timedate">
-				<p><i class="fa fa-calendar"></i>{{$que->created_at}} </p>
+				<p><i class="fa fa-clock-o"></i>  .  {{$que->created_at}} </p>
 			</div>
 
 		</div>
@@ -120,7 +120,9 @@
 		@if($ans->q_id == $que->q_id)
 		<div id="username">
 			<div class="row">
-				<div id="profilephoto"></div>
+				<div id="profilephoto">
+					
+				</div>
 				<div id="column">
 					@foreach($u as $user)
 					@if($user->id == $ans->user_id)
@@ -142,7 +144,7 @@
 			</form>
 			<p>{{$ans->up_vote}}</p>
 			<div id="timedate">
-				<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
+				<p><i class="fa fa-clock-o"></i>  .  {{$ans->created_at}}</p>
 			</div>
 		</div>
 
@@ -180,13 +182,11 @@
 			<br>
 		</div>
 		<div id="content1">
-			<p><br></p>
 			<form action="{{route('search')}}" method="post">
 				{{csrf_field()}}
 				<input type="text" name="search" width="50%">
 				<button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
 			</form>
-			<p><br></p>
 		</div>
 		<div id="nyan_sin2">
 			<br>
