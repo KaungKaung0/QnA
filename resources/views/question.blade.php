@@ -72,7 +72,12 @@
 						<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
 					</div>
 				</form> --}}
-				<a href="{{route('t_view')}}" class="btn btn-secondary btn-sm submit-butto">Join n Answer</a>
+				<form action="{{route('t_view')}}" method="post">
+					{{csrf_field()}}
+					<input type="hidden" name="q_id" value="{{$que->q_id}}">
+					<button class="btn btn-sm btn-primary" type="submit">Join answer</button>
+					
+				</form>
 				<div id="nyan_sin2">
 					<br>
 				</div>
@@ -102,7 +107,7 @@
 											</div>
 										</div>
 									</div>
-									{{$ans->answer}} <br>
+									{!!$ans->answer!!} <br>
 									<iframe name="question" style="display: none;"></iframe>
 									<form action="{{route('ansrate')}}" method="POST" target="question	">
 										{{csrf_field()}}

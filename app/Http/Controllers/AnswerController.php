@@ -18,9 +18,11 @@ class AnswerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        $q_id = $request->q_id;
+        return view('texteditor' , ['q_id' => $q_id]);
 
     }
 
@@ -43,6 +45,7 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         //
+        
        $validated_data = $request->validate([
         'answer'  => 'required|min:1',
     ]);
