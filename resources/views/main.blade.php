@@ -64,150 +64,114 @@
 								<h3>{{$user->name}}</h3>
 								@endif
 								@endforeach
-
-
-					
-						
-						
-
 								<h6>~~Beyond God~~</h6>
 
-								<form action="{{route('qrate' , ['q_id' => $que->q_id])}}" method="POST">
-									{{csrf_field()}}
-						
-						<fieldset class="rating">
-						<label class="container1">
-						<input  type="radio" name="rating" value="1" >
-							<span <i  id="star001" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
+								
 
-						<label class="container1">
-							<input  type="radio" name="rating" value="2">
-							<span <i  id="star002" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
+							</div>
+						</div>
+					</div>
+					<div id="content3">
+						<p>{{$que->question}}</p>
 
-						<label class="container1">
-							<input type="radio" name="rating" value="3">
-							<span <i id="star003" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
+						<div id="timedate">
+							<p><i class="fa fa-calendar"></i>{{$que->created_at}} </p>
+						</div>
 
-						<label class="container1">
-							<input type="radio" name="rating" value="4">
-							<span <i id="star004" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
+					</div>
+					<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
+					@foreach($a as $ans)		
+					@if($ans->q_id == $que->q_id)
+					<div id="username">
+						<div class="row">
+							<div id="profilephoto"></div>
+							<div id="column">
+								@foreach($u as $user)
+								@if($user->id == $ans->user_id)
+								<h3>{{$user->name}}</h3>
+								@endif
+								@endforeach
+								<h6>~~Beyond God~~</h6>
+							</div>
+						</div>
+					</div>
+					<div id="content6">
+						<p>{{$ans->answer}}</p>
+						<iframe name="main" style="display: none;"></iframe>
+						<form action="{{route('ansrate')}}" method="POST" target="main ">
+							{{csrf_field()}}
+							<input type="hidden" name="id" value="{{$ans->id}}">
+							<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
+							<button type="submit" class="btn btn-secondary btn-sm" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i></button>
+						</form>
+						<p>{{$ans->up_vote}}</p>
+						<div id="timedate">
+							<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
+						</div>
+					</div>
 
-						<label class="container1">
-							<input type="radio" name="rating" value="5">
-							<span <i id="star005" class="checkmark fa fa-star change-star-color"></i></span>
-						</label>
-						</fieldset>
-						<button type="submit"  id="rtsub">submit</button>
-					</form>
 
-				</div>
-			</div>
-		</div>
-		<div id="content3">
-			<p>{{$que->question}}</p>
-
-			<div id="timedate">
-				<p><i class="fa fa-clock-o"></i>  .  {{$que->created_at}} </p>
-			</div>
-
-		</div>
-		<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
-		@foreach($a as $ans)		
-		@if($ans->q_id == $que->q_id)
-		<div id="username">
-			<div class="row">
-				<div id="profilephoto">
-					
-				</div>
-				<div id="column">
-					@foreach($u as $user)
-					@if($user->id == $ans->user_id)
-					<h3>{{$user->name}}</h3>
+					@break
 					@endif
 					@endforeach
-					<h6>~~Beyond God~~</h6>
+
+
+					<a href="{{route('questions.index' , ['q_id' => $que->q_id])}}" class="btn btn-secondary btn-sm blah_button">Join</a>
+
+					<form action="{{route('answers.store')}}" method="post">
+						{{csrf_field()}}
+						<div class="form-group">
+							<textarea class="form-control answer" name="answer" id="comment" placeholder="Your Answer" style="width: 98%; height: 100px; "> </textarea>
+
+							<input type="hidden" name="q_id" value="{{$que->q_id}}">
+							<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
+						</div>
+					</form>
+					<div id="nyan_sin2">
+						<br>
+					</div>
+
+				</div>
+				@endforeach()
+
+
+			</div>
+
+		</div>
+		<div class="col-md-3 col-sm-off">
+			<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+				<div id="nyan_sin1">
+					<br>
+				</div>
+				<div id="content1">
+					<p><br></p>
+					<form action="{{route('search')}}" method="post">
+						{{csrf_field()}}
+						<input type="text" name="search" width="50%">
+						<button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
+					</form>
+					<p><br></p>
+				</div>
+				<div id="nyan_sin2">
+					<br>
 				</div>
 			</div>
-		</div>
-		<div id="content6">
-			<p>{{$ans->answer}}</p>
-			<iframe name="main" style="display: none;"></iframe>
-			<form action="{{route('ansrate')}}" method="POST" target="main ">
-				{{csrf_field()}}
-				<input type="hidden" name="id" value="{{$ans->id}}">
-				<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
-				<button type="submit" class="btn btn-secondary btn-sm" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i></button>
-			</form>
-			<p>{{$ans->up_vote}}</p>
-			<div id="timedate">
-				<p><i class="fa fa-clock-o"></i>  .  {{$ans->created_at}}</p>
+			<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+				<div id="nyan_sin1">
+					<br>
+				</div>
+				<div id="content1">
+					<p><br></p>
+					<h2 class="may_kyi">Advertise Here</h2>
+					<p><br></p>
+				</div>
+				<div id="nyan_sin2">
+					<br>
+				</div>
 			</div>
-		</div>
 
-
-		@break
-		@endif
-		@endforeach
-
-
-		<a href="{{route('questions.index' , ['q_id' => $que->q_id])}}" class="btn btn-secondary btn-sm blah_button">Join</a>
-
-		<form action="{{route('answers.store')}}" method="post">
-			{{csrf_field()}}
-			<div class="form-group">
-				<textarea class="form-control answer" name="answer" id="comment" placeholder="Your Answer" style="width: 98%; height: 100px; "> </textarea>
-
-				<input type="hidden" name="q_id" value="{{$que->q_id}}">
-				<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-			</div>
-		</form>
-		<div id="nyan_sin2">
-			<br>
-		</div>
-
-	</div>
-	@endforeach()
-
-
-</div>
-
-</div>
-<div class="col-md-3 col-sm-off">
-	<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-		<div id="nyan_sin1">
-			<br>
-		</div>
-		<div id="content1">
-			<form action="{{route('search')}}" method="post">
-				{{csrf_field()}}
-				<input type="text" name="search" width="50%">
-				<button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
-			</form>
-		</div>
-		<div id="nyan_sin2">
-			<br>
 		</div>
 	</div>
-	<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-		<div id="nyan_sin1">
-			<br>
-		</div>
-		<div id="content1">
-			<p><br></p>
-			<h2 class="may_kyi">Advertise Here</h2>
-			<p><br></p>
-		</div>
-		<div id="nyan_sin2">
-			<br>
-		</div>
-	</div>
-
-</div>
-</div>
 </div>
 
 
