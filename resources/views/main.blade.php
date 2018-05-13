@@ -58,17 +58,19 @@
 							$profile_pic=$user->profile_pic;
 							@endphp
 							<div id="profilephoto">
+
 								@if(is_null($profile_pic))
-								<img src="" alt="" width="50px" height="50px">
+								<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
 								@else
-								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+								<img src="{{asset("img/$profile_pic")}}" alt="" width="50px" height="50px">
 								@endif
 							</div>
 							<div id="column">
 								<h3>{{$user->name}}</h3>
+								<h6>{{$user->role}}</h6>
 								@endif
 								@endforeach
-								<h6>~~Beyond God~~</h6>
+								
 
 								
 
@@ -94,19 +96,24 @@
 							$profile_pic = $user->profile_pic;
 							@endphp
 							<div id="profilephoto">
+								@if(is_null($profile_pic))
+								<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
+								@else
 								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+								@endif
 							</div>
 							<div id="column">
-								
+
 								<h3>{{$user->name}}</h3>
+								<h6>{{$user->role}}</h6>
 								@endif
 								@endforeach
-								<h6>~~Beyond God~~</h6>
 							</div>
 						</div>
+						<p>{!!$ans->answer!!}</p>
 					</div>
 					<div id="content6">
-						<p>{{$ans->answer}}</p>
+
 						<iframe name="main" style="display: none;"></iframe>
 						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" target="main ">
 							{{csrf_field()}}

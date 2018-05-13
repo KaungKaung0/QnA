@@ -22,7 +22,8 @@ class AnswerController extends Controller
     {
         //
         $q_id = $request->q_id;
-        return view('texteditor' , ['q_id' => $q_id]);
+        $profile_pic = \Auth::user()->profile_pic;
+        return view('texteditor' , ['q_id' => $q_id , 'profile_pic'=>$profile_pic]);
 
     }
 

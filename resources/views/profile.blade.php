@@ -13,12 +13,7 @@
 			<div class="col-md-3">
 				<div class="image-container-apyin">
 					<div class="image-container-atwin">
-						@if($picexit == 1)
-						<img src="{{asset("img/$profile" )}}" alt="" width="200px" height="200px">
-
-						
-
-						@else
+						@if(is_null($profile_pic))
 						<form enctype="multipart/form-data"  action="{{route('ppupload')}}" method="POST">
 							{{csrf_field()}}
 							<td class="align-middle"><span class="btn btn-default btn-file" id="change_this">
@@ -26,6 +21,8 @@
 							</span></td>
 							<input type="submit" style="display: none;" name="upload">
 						</form>
+						@else
+						<img src="{{asset("img/$profile_pic" )}}" alt="" width="200px" height="200px">
 						@endif
 					</div>
 				</div>
@@ -51,7 +48,7 @@
 							</tr>
 						</tbody>
 					</table>
-					@if($picexit == 1)
+					@if(!is_null($profile_pic))
 					<a href="{{route('ppdelete')}}" id="ppdelete" class="btn btn-danger" name="edit">Edit Profile Picture </a>
 					@endif
 				</div>
@@ -118,23 +115,32 @@
 						$profile_pic=$user->profile_pic;
 						@endphp
 						<div id="profilephoto">
-							<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+							@if(is_null($profile_pic))
+							<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
+							@else
+							<img src="{{asset("img/$profile_pic")}}" alt="" width="50px" height="50px">
+							@endif
 						</div>
-						<h5>{{$user->name}}</h5>
+						<div id="column">
+
+							<h3>{{$user->name}}</h3>
+							<h6>{{$user->role}}</h6>
+						</div>
 						@endif
 						@endforeach	
-						<h6>~~Beyond God~~</h6>
+						
+					</div>
+					<div id="content3">
+						<p>{{$que->question}}</p>
+
+						<div id="timedate">
+							<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>
+						</div>
+
 					</div>
 				</div>
 			</div>
-			<div id="content3">
-				<p>{{$que->question}}</p>
-
-				<div id="timedate">
-					<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>
-				</div>
-
-			</div>
+			
 			<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
 			@foreach($a as $ans)		
 			@if($ans->q_id == $que->q_id)
@@ -146,17 +152,22 @@
 					$profile_pic = $user->profile_pic;
 					@endphp
 					<div id="profilephoto">
-						<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+						@if(is_null($profile_pic))
+						<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
+						@else
+						<img src="{{asset("img/$profile_pic")}}" alt="" width="50px" height="50px">
+						@endif
 					</div>
 					<div id="column">
 
 						<h3>{{$user->name}}</h3>
-						@endif
-						@endforeach
+						<h6>{{$user->role}}</h6>
 					</div>
+					@endif
+					@endforeach
 				</div>
 				<div id="content6">
-					<p>{{$ans->answer}}</p>
+					<p>{!!$ans->answer!!}</p>
 						<!-- <button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
 							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
 							<div id="timedate">

@@ -44,7 +44,7 @@ class RegisterController extends Controller
             'password' => 'required|string|min:3|confirmed',
         ]);
         $confirmation = rand(10000000,99999999);
-        
+       
         $users = User::create([
 
             'name' => $validated_data['name'],
@@ -52,17 +52,17 @@ class RegisterController extends Controller
             'password' => bcrypt($validated_data['password']),
             'confirmed' => 0,
             'confirmation' => $confirmation,
-            'profile_pic'  => " ",
+            'profile_pic'  => null,
             'role'   =>'noobie',
             'exp' => 0,
         ]);
         $this->guard()->login($users);
 
         return redirect('mailconf')->with('confirmation' , [$confirmation]);
-       
+
     }
 
-     protected function guard()
+    protected function guard()
     {
         return Auth::guard();
     }

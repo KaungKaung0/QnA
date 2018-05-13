@@ -24,11 +24,13 @@ class QuestionController extends Controller
 
     public function index(Request $request)
     {
+        $profile_pic= \Auth::user()->profile_pic;
         $a = Answer::orderBy('up_vote','desc')->get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
-        $u = User::select('id' , 'name' , 'profile_pic')->get();
+        $u = User::select('id' , 'name' , 'profile_pic' , 'role')->get();
 
-        return view('question' , compact('a' , 'q' , 'u'));
+
+        return view('question' , compact('a' , 'q' , 'u' , 'profile_pic'));
     }
 
     /**

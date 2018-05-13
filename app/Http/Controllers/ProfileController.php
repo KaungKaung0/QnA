@@ -13,25 +13,15 @@ class ProfileController extends Controller
     public function index(){
 
         $user = \Auth::user()->name;
-        $profile = \Auth::user()->profile_pic;
+        $profile_pic = \Auth::user()->profile_pic;
         $role = \Auth::user()->role;
 
         $user_id = \Auth::user()->id;
         $a = Answer::get();
         $q = Question::where('user_id' , $user_id)->paginate('5');
-        $u = User::select('id' , 'name' , 'profile_pic')->get();
-        // checking profile pic
+        $u = User::select('id' , 'name' , 'profile_pic', 'role')->get();
 
-        if(file_exists('img/' . $profile )) {
-            $picexit =1;
-             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit' , 'profile' , 'role'));
-
-        } else {
-            $picexit =0;
-             return view('profile' ,compact( 'a' , 'q' , 'u' , 'user' , 'picexit' , 'role'));
-        }
-        
-       
+        return view('profile' ,compact( 'a' , 'q' , 'u' , 'user'  , 'profile_pic' , 'role'));
     }
 
     public function pp(Request $request){
@@ -46,8 +36,12 @@ class ProfileController extends Controller
         return redirect('profile');	
     }
     public function ppdelete(){
-        $profile = \Auth::user()->profile_pic;
-        unlink('img/' . $profile);
+        $id = \Auth::user()->id;
+        $data = User::where('id' , $id)->first();
+        $profile_pic = $data->profile_pic;
+        unlink('img/' . $profile_pic);
+        $data->profile_pic = null;
+        $data->save();
         
 
         return redirect('profile');

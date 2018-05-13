@@ -33,24 +33,24 @@ class MainController extends Controller
     public function index()
     {
         //
+        $profile_pic = \Auth::user()->profile_pic;
         $confirmed = Auth::user()->confirmed;
         if($confirmed != 1)
         {
             flash('Your email is not confirmed. Confirm your email first.  The confirmation code is sent to your email');
             return redirect()->route('mailconf');
         }
-       else
-       {
-       
+        else
+        {
+
             $a = Answer::orderBy('up_vote' ,'desc')->get();
-       $u = User::select('id' , 'name' , 'profile_pic')->get();
-      
-        
-        $q = Question::paginate('5');
-         
-        
-        return view('main' , compact( 'a','q' ,'u'));
-    }
+            $u = User::select('id' , 'name' , 'profile_pic' , 'role')->get();
+
+
+            $q = Question::paginate('5');
+
+            return view('main' , compact( 'a','q' ,'u', 'profile_pic'));
+        }
     }
     /**
      * Show the form for creating a new resource.
