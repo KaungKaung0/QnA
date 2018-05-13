@@ -24,9 +24,18 @@ class QuestionController extends Controller
 
     public function index(Request $request)
     {
+        $profile = \Auth::user()->profile_pic;
         $a = Answer::orderBy('up_vote','desc')->get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
         $u = User::select('id' , 'name' , 'profile_pic')->get();
+        if(file_exists('img/' . $profile )) {
+            $picexit =1;
+             return view('question' , compact( 'a','q' ,'u', 'picexit'));
+
+        } else {
+            $picexit =0;
+            return view('question' , compact( 'a','q' ,'u', 'picexit'));
+        }
 
         return view('question' , compact('a' , 'q' , 'u'));
     }

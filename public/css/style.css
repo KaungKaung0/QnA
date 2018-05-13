@@ -594,7 +594,7 @@ img{
 		display: inline;
 		position: relative;
 		padding-left: 10px;
-		margin-right: 12px;
+		margin-right: 2px;
 		cursor: pointer;
 		font-size: 22px;
 		-webkit-user-select: none;
@@ -660,4 +660,25 @@ img{
 
 img{
 	border-radius: 100%;
+}
+body{
+	background-color: #e9ebee;
+}
+
+.home_container{
+	height: 30px;
+	width: 30px;
+	font-size: 20px;
+	border-radius: 100%;
+	background-color: red;
+	margin-right: 5px;
+	text-align: center;
+}
+
+.home_color{
+	color: black;
+}
+
+.home_color:hover{
+	color: #e9ebee;
 }

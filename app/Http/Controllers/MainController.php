@@ -33,6 +33,7 @@ class MainController extends Controller
     public function index()
     {
         //
+        $profile = \Auth::user()->profile_pic;
         $confirmed = Auth::user()->confirmed;
         if($confirmed != 1)
         {
@@ -47,9 +48,18 @@ class MainController extends Controller
       
         
         $q = Question::paginate('5');
+
+        if(file_exists('img/' . $profile )) {
+            $picexit =1;
+             return view('main' , compact( 'a','q' ,'u', 'picexit'));
+
+        } else {
+            $picexit =0;
+            return view('main' , compact( 'a','q' ,'u', 'picexit'));
+        }
          
         
-        return view('main' , compact( 'a','q' ,'u'));
+        
     }
     }
     /**

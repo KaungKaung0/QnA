@@ -58,7 +58,11 @@
 							$profile_pic=$user->profile_pic;
 							@endphp
 							<div id="profilephoto">
+								@if($picexit == 1)
 								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+								@else
+								<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
+								@endif
 							</div>
 							<div id="column">
 								<h3>{{$user->name}}</h3>
@@ -85,12 +89,16 @@
 					<div id="username">
 						<div class="row">
 							@foreach($u as $user)
-								@if($user->id == $ans->user_id)
+							@if($user->id == $ans->user_id)
 							@php
-								$profile_pic = $user->profile_pic;
+							$profile_pic = $user->profile_pic;
 							@endphp
 							<div id="profilephoto">
+								@if($picexit == 1)
 								<img src="{{asset("img/$profile_pic" )}}" alt="" width="50px" height="50px">
+								@else
+								<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
+								@endif
 							</div>
 							<div id="column">
 								
