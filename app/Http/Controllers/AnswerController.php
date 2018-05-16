@@ -21,9 +21,12 @@ class AnswerController extends Controller
     public function index(Request $request)
     {
         //
-        $q_id = $request->q_id;
         $profile_pic = \Auth::user()->profile_pic;
-        return view('texteditor' , ['q_id' => $q_id , 'profile_pic'=>$profile_pic]);
+        if($request->try == "question"){
+            return view('texteditor' , ['try'=>"question" ,'profile_pic'=>$profile_pic]);
+        }
+        $q_id = $request->q_id;
+        return view('texteditor' , ['q_id' => $q_id , 'profile_pic'=>$profile_pic ,'try'=>"answer"]);
 
     }
 

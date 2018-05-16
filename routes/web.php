@@ -37,7 +37,7 @@ Route::get('resign' , function(){
 	return redirect('register');
 })->name('resign');
 
-Route::post('/t_view' , 'AnswerController@index')->name('t_view');
+Route::get('/t_view' , 'AnswerController@index')->name('t_view');
 
 
 Route::post('/questrating' , 'RatingController@questrating')->name('qrate');

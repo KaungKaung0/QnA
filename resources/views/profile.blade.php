@@ -125,13 +125,14 @@
 
 							<h3>{{$user->name}}</h3>
 							<h6>{{$user->role}}</h6>
+							<p>{!!$que->question!!}</p>
 						</div>
 						@endif
 						@endforeach	
 						
 					</div>
 					<div id="content3">
-						<p>{{$que->question}}</p>
+						
 
 						<div id="timedate">
 							<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>

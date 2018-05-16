@@ -76,9 +76,10 @@
 
 							</div>
 						</div>
+						<p>{!!$que->question!!}</p>
 					</div>
 					<div id="content3">
-						<p>{{$que->question}}</p>
+						
 
 						<div id="timedate">
 							<p><i class="fa fa-calendar"></i>{{$que->created_at}} </p>

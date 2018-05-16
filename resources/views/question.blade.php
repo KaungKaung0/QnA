@@ -67,11 +67,12 @@
 									</fieldset>
 									<button type="submit"  id="rtsub">submit</button>
 								</form>
+								<p>{!!$que->question!!}</p>
 							</div>
 						</div>
 					</div>
 					<div id="content3">
-						<p>{{$que->question}}</p>
+						
 
 						<div id="timedate">
 							<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>
@@ -87,7 +88,7 @@
 							<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
 						</div>
 					</form> --}}
-					<form action="{{route('t_view')}}" method="post">
+					<form action="{{route('t_view')}}" method="get">
 						{{csrf_field()}}
 						<input type="hidden" name="q_id" value="{{$que->q_id}}">
 						<button class="btn btn-sm btn-primary" type="submit">Join answer</button>

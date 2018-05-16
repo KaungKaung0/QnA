@@ -18,9 +18,9 @@ class MainController extends Controller
 
     public function logout()
     {
+        session_destroy();
+        session_unset();
         auth()->logout();
-        // session_destroy();
-        // session_unset();
         return view('auth.login');
         // $b = \Auth::id();
         // echo $b;
@@ -33,7 +33,6 @@ class MainController extends Controller
     public function index()
     {
         //
-        $profile_pic = \Auth::user()->profile_pic;
         $confirmed = Auth::user()->confirmed;
         if($confirmed != 1)
         {
@@ -42,13 +41,13 @@ class MainController extends Controller
         }
         else
         {
+            $profile_pic = Auth::user()->profile_pic;
 
             $a = Answer::orderBy('up_vote' ,'desc')->get();
             $u = User::select('id' , 'name' , 'profile_pic' , 'role')->get();
 
 
             $q = Question::paginate('5');
-
             return view('main' , compact( 'a','q' ,'u', 'profile_pic'));
         }
     }
