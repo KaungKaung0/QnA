@@ -51,5 +51,5 @@ Route::get('ppdelete' , 'ProfileController@ppdelete')->name('ppdelete');
 
 /*search route*/
 
-Route::post('/search' , 'SearchController@search')->name('search');
+Route::get('/search' , 'SearchController@search')->name('search');
 Route::get('/result'  , 'SearchControlelr@result')->name('result');

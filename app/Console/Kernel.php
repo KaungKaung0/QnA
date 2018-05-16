@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use App\User;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -26,6 +26,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+      /*  $schedule->call(function(){
+            $user = User::where('id' , 3)->first();
+            $user->exp =+ 5;
+            $user->save();
+        })->everyMinute();*/
     }
 
     /**

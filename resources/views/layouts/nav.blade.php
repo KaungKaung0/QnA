@@ -8,7 +8,7 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-right">
 
-    <form action="{{route('search')}}" method="post">
+    <form action="{{route('search')}}" method="get">
       {{csrf_field()}}
       <input type="text" name="search" class="search-size" placeholder="Search...">
       <button class="btn btn-control" type="submit"><div class="search-control"><i class="fa fa-search"></i></div></button>

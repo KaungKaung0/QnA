@@ -41,6 +41,7 @@ class MainController extends Controller
         }
         else
         {
+            $this->expcalc();
             $profile_pic = Auth::user()->profile_pic;
 
             $a = Answer::orderBy('up_vote' ,'desc')->get();
@@ -56,65 +57,30 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function expcalc(){
+        $user = Auth::user();
+        $exp = Auth::user()->exp;
+        if($exp<=10){
+            $user->role = "Noobie";
+        }
+        elseif ($exp>10&&$exp<=25) {
+            $user->role = "Rookie";
+        }
+        elseif ($exp>25&&$exp<50) {
+            $user->role = "Pro";
+        }
+        elseif ($exp>50&&$exp<=100) {
+            $user->role = "Hyper";
+        }
+        elseif ($exp>100&&$exp<=200) {
+            $user->role = "Lord";
+        }
+        elseif ($exp>200&&$exp<=500) {
+            $user->role = "Legend";
+        }
+        elseif ($exp>500) {
+            $user->role = "God";
+        }
+        $user->save();
     }
 }

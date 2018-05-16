@@ -8,61 +8,67 @@ use App\Answer;
 class RatingController extends Controller
 {
     //
-    public function questrating(Request $request){
+  public function questrating(Request $request){
 
-    	$question = Question::where('q_id' ,$request->q_id)->first();
-     $question->count += 1;
-     switch ($request->rating) {
-      case '5':
-      $question->total +=5;
-      break;
-      case '4':
-      $question->total +=4;
-      break;
-      case '3':
-      $question->total +=3;
-      break;
-      case '2':
-      $question->total +=2;
-      break;
-      case '1':
-      $question->total +=1;
-      break;
+   $question = Question::where('q_id' ,$request->q_id)->first();
+   $question->count += 1;
+   switch ($request->rating) {
+    case '5':
+    $question->total +=5;
+    break;
+    case '4':
+    $question->total +=4;
+    break;
+    case '3':
+    $question->total +=3;
+    break;
+    case '2':
+    $question->total +=2;
+    break;
+    case '1':
+    $question->total +=1;
+    break;
   }
   $count = $question->count;
   $total = $question->total;
   $avg   = round( $total/$count, 1);
   $question->avg = $avg;
   $question->save();
+
+  //User exp up
+  $user = Auth::user();
+  $user->exp =+1;
+  $user->save(); 
+  
   return redirect()->route('questions.index' , ['q_id' => $request->q_id]);
 }
 
 public function ansrating(Request $request){
 
-    $answer = Answer::where('id' , $request->id)->first();
-    if($request->up_vote == 1){
-        $answer->up_vote +=1;
-        $answer->save();
-        switch ($request->place) {
-            case 'main':
-            return redirect()->route('main.index');
-            break;
-            case 'view':
-             return redirect()->route('questions.index' , ['q_id' => $request->q_id]);
-            break;
-            case 'profile':
-            return redirect('profile');
-            break;
-            default:
+  $answer = Answer::where('id' , $request->id)->first();
+  if($request->up_vote == 1){
+    $answer->up_vote +=1;
+    $answer->save();
+    switch ($request->place) {
+      case 'main':
+      return redirect()->route('main.index');
+      break;
+      case 'view':
+      return redirect()->route('questions.index' , ['q_id' => $request->q_id]);
+      break;
+      case 'profile':
+      return redirect('profile');
+      break;
+      default:
                     # code...
-            break;
-        }
+      break;
+    }
 
-    }
-    else{
-        $answer->down_vote = 1;
-        $answer->save();
-        
-    }
+  }
+  else{
+    $answer->down_vote = 1;
+    $answer->save();
+
+  }
 }
 }

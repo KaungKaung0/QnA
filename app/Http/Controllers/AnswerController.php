@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Question;
 use App\Answer;
-
+use App\User;
+use Auth;
 class AnswerController extends Controller
 {
 
@@ -61,6 +62,9 @@ class AnswerController extends Controller
         'up_vote' => 0,
         'down_vote' => 0,
     ]);
+       $user = Auth::user();
+       $user->exp =+1;
+       $user->save(); 
        $place = $request->place;
        switch ($place) {
          case "view":

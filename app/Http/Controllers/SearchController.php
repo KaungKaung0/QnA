@@ -12,6 +12,7 @@ class SearchController extends Controller
 
 
     public function search(Request $request){
+            $profile_pic = \Auth::user()->profile_pic;
     		$search =$request->search;
     		$found	=0;
     		$question = Question::where('question' ,  'LIKE', '%' . $search . '%')->get();
@@ -19,10 +20,11 @@ class SearchController extends Controller
 
     		if(($question->count()> 0)){
     			$found =1;
-    			return view('result' , compact('question' , 'found', 'u'));	
+    			return view('result' , compact('question' , 'found', 'u', 'profile_pic'));	
     		}
     		else{
-    			return view('result' , compact('found'));
+
+    			return view('result' , compact('found','profile_pic'));
     		}
     		
     }
