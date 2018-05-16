@@ -156,23 +156,19 @@
 
 		</div>
 		<div class="col-md-3 col-sm-off">
-			<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+			<!-- <div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 				<div id="nyan_sin1">
 					<br>
 				</div>
 				<div id="content1">
 					<p><br></p>
-					<form action="{{route('search')}}" method="post">
-						{{csrf_field()}}
-						<input type="text" name="search" width="50%">
-						<button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
-					</form>
+					
 					<p><br></p>
 				</div>
 				<div id="nyan_sin2">
 					<br>
 				</div>
-			</div>
+			</div> -->
 			<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 				<div id="nyan_sin1">
 					<br>
