@@ -25,10 +25,10 @@
       <a href="{{ route('profile') }}">
         <div id="profilecontainer">
 
-          @if(is_null($profile_pic))
+          @if(is_null($pp))
           <img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="30px" height="30px">
           @else
-          <img src="{{asset("img/$profile_pic")}}" alt="" width="30px" height="30px">
+          <img src="{{asset("img/$pp")}}" alt="" width="30px" height="30px">
 
           @endif
         </div>

@@ -13,7 +13,7 @@ class ProfileController extends Controller
     public function index(){
 
         $user = \Auth::user()->name;
-        $profile_pic = \Auth::user()->profile_pic;
+        $pp = \Auth::user()->profile_pic;
         $role = \Auth::user()->role;
 
         $user_id = \Auth::user()->id;
@@ -21,7 +21,7 @@ class ProfileController extends Controller
         $q = Question::where('user_id' , $user_id)->paginate('5');
         $u = User::select('id' , 'name' , 'profile_pic', 'role')->get();
 
-        return view('profile' ,compact( 'a' , 'q' , 'u' , 'user'  , 'profile_pic' , 'role'));
+        return view('profile' ,compact( 'a' , 'q' , 'u' , 'user'  , 'pp' , 'role'));
     }
 
     public function pp(Request $request){

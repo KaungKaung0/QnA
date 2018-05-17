@@ -26,11 +26,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-      /*  $schedule->call(function(){
-            $user = User::where('id' , 3)->first();
-            $user->exp =+ 5;
-            $user->save();
-        })->everyMinute();*/
+        // $schedule->call(function(){
+        //     $user = User::where('id' , 2)->first();
+        //     $user->exp += 10;
+        //     $user->save();
+        // })->everyMinute();
     }
 
     /**

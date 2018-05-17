@@ -42,14 +42,14 @@ class MainController extends Controller
         else
         {
             $this->expcalc();
-            $profile_pic = Auth::user()->profile_pic;
+            $pp = Auth::user()->profile_pic;
 
             $a = Answer::orderBy('up_vote' ,'desc')->get();
             $u = User::select('id' , 'name' , 'profile_pic' , 'role')->get();
 
 
             $q = Question::paginate('5');
-            return view('main' , compact( 'a','q' ,'u', 'profile_pic'));
+            return view('main' , compact( 'a','q' ,'u', 'pp'));
         }
     }
     /**

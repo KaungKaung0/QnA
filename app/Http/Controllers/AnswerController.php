@@ -24,10 +24,10 @@ class AnswerController extends Controller
         //
         $profile_pic = \Auth::user()->profile_pic;
         if($request->try == "question"){
-            return view('texteditor' , ['try'=>"question" ,'profile_pic'=>$profile_pic]);
+            return view('texteditor' , ['try'=>"question" ,'pp'=>$profile_pic]);
         }
         $q_id = $request->q_id;
-        return view('texteditor' , ['q_id' => $q_id , 'profile_pic'=>$profile_pic ,'try'=>"answer"]);
+        return view('texteditor' , ['q_id' => $q_id , 'pp'=>$profile_pic ,'try'=>"answer"]);
 
     }
 

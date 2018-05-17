@@ -13,7 +13,7 @@
 			<div class="col-md-3">
 				<div class="image-container-apyin">
 					<div class="image-container-atwin">
-						@if(is_null($profile_pic))
+						@if(is_null($pp))
 						<form enctype="multipart/form-data"  action="{{route('ppupload')}}" method="POST">
 							{{csrf_field()}}
 							<td class="align-middle"><span class="btn btn-default btn-file" id="change_this">
@@ -22,7 +22,7 @@
 							<input type="submit" style="display: none;" name="upload">
 						</form>
 						@else
-						<img src="{{asset("img/$profile_pic" )}}" alt="" width="200px" height="200px">
+						<img src="{{asset("img/$pp" )}}" alt="" width="200px" height="200px">
 						@endif
 					</div>
 				</div>
@@ -48,7 +48,7 @@
 							</tr>
 						</tbody>
 					</table>
-					@if(!is_null($profile_pic))
+					@if(!is_null($pp))
 					<a href="{{route('ppdelete')}}" id="ppdelete" class="btn btn-danger" name="edit">Edit Profile Picture </a>
 					@endif
 				</div>
