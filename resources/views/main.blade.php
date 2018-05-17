@@ -119,10 +119,18 @@
 						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" target="main ">
 							{{csrf_field()}}
 							<input type="hidden" name="id" value="{{$ans->id}}">
-							<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
-							<button type="submit" class="btn btn-secondary btn-sm" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i></button>
+							<div class="upvote_system">
+								<div class="row">
+									<button type="submit" class="btn btn-upvote btn-sm" name="up_vote" value="1"><i class="fa fa-angle-double-up"></i></button>
+									<p>{{$ans->up_vote}}</p>
+								</div>
+							</div>
+							
+							
+							<button type="submit" class="btn btn-upvote btn-sm" name="down_vote" value="1"><i class="fa fa-angle-double-down"></i></button>
+							
 						</form>
-						<p>{{$ans->up_vote}}</p>
+						
 						<div id="timedate">
 							<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
 						</div>

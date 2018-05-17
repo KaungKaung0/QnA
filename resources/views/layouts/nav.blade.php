@@ -11,7 +11,7 @@
     <form action="{{route('search')}}" method="get">
       {{csrf_field()}}
       <input type="text" name="search" class="search-size" placeholder="Search...">
-      <button class="btn btn-control" type="submit"><div class="search-control"><i class="fa fa-search"></i></div></button>
+      <button class="btn btn-control" type="submit"><div class="search-control"></div></button>
     </form>
 
     <li class="nav-item">
@@ -26,16 +26,23 @@
         <div id="profilecontainer">
 
           @if(is_null($pp))
-          <img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="30px" height="30px">
+          <img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="28px" height="28px">
           @else
-          <img src="{{asset("img/$pp")}}" alt="" width="30px" height="30px">
+          <img src="{{asset("img/$pp")}}" alt="" width="28px" height="28px">
 
           @endif
         </div>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="Ask_Content" href="{{route('t_view' , ['try'=>"question"])}}">
+        <div class="Ask_Container">
+          Ask Here
+        </div>
+      </a>
+    </li>
   </ul>
-<a href="{{route('t_view' , ['try'=>"question"])}}">Ask Here</a>
+
     <!-- <form id="logout-form" class="form-inline my-2 my-lg-0 typo" action="{{ route('logout') }}" method="POST">
       {{ csrf_field() }}
       <button type="submit" class="btn default-primary-color text-primary-color yeon-sung nav-size my-2 my-sm-0"><i class="fa fa-sign-out"></i> Logout</button>
