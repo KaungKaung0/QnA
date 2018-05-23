@@ -114,20 +114,21 @@
 						<p>{!!$ans->answer!!}</p>
 					</div>
 					<div id="content6">
-
 						<iframe name="main" style="display: none;"></iframe>
-						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" target="main ">
+						<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
+						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})" name="ansvote">
 							{{csrf_field()}}
 							<input type="hidden" name="id" value="{{$ans->id}}">
 							<div class="upvote_system">
 								<div class="row">
 									<button type="submit" class="btn btn-upvote btn-sm" name="up_vote" value="1"><i class="fa fa-angle-double-up"></i></button>
-									<p>{{$ans->up_vote}}</p>
+									
+									<button type="submit" class="btn btn-upvote btn-sm" name="down_vote" value="1"><i class="fa fa-angle-double-down"></i></button>
 								</div>
 							</div>
 							
 							
-							<button type="submit" class="btn btn-upvote btn-sm" name="down_vote" value="1"><i class="fa fa-angle-double-down"></i></button>
+							
 							
 						</form>
 						
