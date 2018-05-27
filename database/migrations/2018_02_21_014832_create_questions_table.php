@@ -22,7 +22,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('count');
             $table->integer('total');
             $table->decimal('avg' , 3,1);
-            $table->timestamps();
+            $table->date('created_Date');
         });
     }
 

@@ -75,19 +75,12 @@
 						
 
 						<div id="timedate">
-							<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>
+							<p><i class="fa fa-calendar"></i>{{$que->created_Date}} </p>
+							<p>count {{$que->viewer_count}}</p>
 						</div>
 
 					</div>
-						{{-- <form action="{{route('answers.store' , ['place' => 'view'])}}" method="post">
-						{{csrf_field()}}
-						<div class="form-group">
-							<textarea class="form-control answer" name="answer" rows="5" id="comment" placeholder="Your Answer"> </textarea>
-
-							<input type="hidden" name="q_id" value="{{$que->q_id}}">
-							<button type="submit" class="btn btn-secondary btn-sm submit-button"><i class="fa fa-upload"></i> Submit</button>
-						</div>
-					</form> --}}
+						
 					<form action="{{route('t_view')}}" method="get">
 						{{csrf_field()}}
 						<input type="hidden" name="q_id" value="{{$que->q_id}}">
@@ -138,6 +131,7 @@
 											</div>
 										</div>
 										{!!$ans->answer!!} <br>
+										@if(is_null($logs))
 										<iframe name="main" style="display: none;"></iframe>
 										<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
 										<form action="{{route('ansrate' ,['place' => "view" , 'q_id' => $que->q_id])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})">
@@ -146,8 +140,22 @@
 											<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
 											<button type="submit" class="btn btn-secondary btn-sm" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i></button>
 										</form>
+										@else
+										@if(in_array($ans->id, $logs))
+										<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
+										@else
+										<iframe name="main" style="display: none;"></iframe>
+										<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
+										<form action="{{route('ansrate' ,['place' => "view" , 'q_id' => $que->q_id])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})">
+											{{csrf_field()}}
+											<input type="hidden" name="id" value="{{$ans->id}}">
+											<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
+											<button type="submit" class="btn btn-secondary btn-sm" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i></button>
+										</form>
+										@endif
+										@endif
 										<div id="timedate">
-											<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
+											<p><i class="fa fa-calendar"></i>{{$ans->created_Date}}</p>
 										</div>
 									</td>
 									@endif

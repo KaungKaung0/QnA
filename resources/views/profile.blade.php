@@ -135,7 +135,7 @@
 						
 
 						<div id="timedate">
-							<p><i class="fa fa-calendar"></i>{{$que->created_at}}</p>
+							<p><i class="fa fa-calendar"></i>{{$que->created_Date}}</p>
 						</div>
 
 					</div>
@@ -172,7 +172,7 @@
 						<!-- <button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
 							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
 							<div id="timedate">
-								<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
+								<p><i class="fa fa-calendar"></i>{{$ans->created_Date}}</p>
 							</div>
 						</div>
 

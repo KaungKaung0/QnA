@@ -15,7 +15,8 @@ class ProfileController extends Controller
         $user = \Auth::user()->name;
         $pp = \Auth::user()->profile_pic;
         $role = \Auth::user()->role;
-
+        // $test = User::find(1)->question;
+        // dd($test);
         $user_id = \Auth::user()->id;
         $a = Answer::get();
         $q = Question::where('user_id' , $user_id)->paginate('5');

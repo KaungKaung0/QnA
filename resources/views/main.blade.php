@@ -69,11 +69,7 @@
 								<h3>{{$user->name}}</h3>
 								<h6>{{$user->role}}</h6>
 								@endif
-								@endforeach
-								
-
-								
-
+								@endforeach								
 							</div>
 						</div>
 						<p>{!!$que->question!!}</p>
@@ -82,13 +78,15 @@
 						
 
 						<div id="timedate">
-							<p><i class="fa fa-calendar"></i>{{$que->created_at}} </p>
+							<p><i class="fa fa-calendar"></i>{{$que->created_Date}} </p>
+							<p>count {{$que->viewer_count}}</p>
 						</div>
 
 					</div>
 					<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
 					@foreach($a as $ans)		
 					@if($ans->q_id == $que->q_id)
+
 					<div id="username">
 						<div class="row">
 							@foreach($u as $user)
@@ -114,6 +112,7 @@
 						<p>{!!$ans->answer!!}</p>
 					</div>
 					<div id="content6">
+						@if(is_null($logs))
 						<iframe name="main" style="display: none;"></iframe>
 						<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
 						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})" name="ansvote">
@@ -126,14 +125,31 @@
 									<button type="submit" class="btn btn-upvote btn-sm" name="down_vote" value="1"><i class="fa fa-angle-double-down"></i></button>
 								</div>
 							</div>
-							
-							
-							
-							
 						</form>
+						@else
+						
+						@if(in_array($ans->id, $logs))
+							<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
+					
+						@else
+							<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
+						<iframe name="main" style="display: none;"></iframe>
+						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})" name="ansvote">
+							{{csrf_field()}}
+							<input type="hidden" name="id" value="{{$ans->id}}">
+							<div class="upvote_system">
+								<div class="row">
+									<button type="submit" class="btn btn-upvote btn-sm" name="up_vote" value="1"><i class="fa fa-angle-double-up"></i></button>
+									
+									<button type="submit" class="btn btn-upvote btn-sm" name="down_vote" value="1"><i class="fa fa-angle-double-down"></i></button>
+								</div>
+							</div>
+						</form>
+						@endif
+						@endif
 						
 						<div id="timedate">
-							<p><i class="fa fa-calendar"></i>{{$ans->created_at}}</p>
+							<p><i class="fa fa-calendar"></i>{{$ans->created_Date}}</p>
 						</div>
 					</div>
 

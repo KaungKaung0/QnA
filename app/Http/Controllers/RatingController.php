@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Question;
 use App\Answer;
 use App\User;
+use App\ActivityLog;
 class RatingController extends Controller
 {
     //
@@ -58,26 +59,27 @@ public function ansrating(Request $request){
     $answer->save();
     $user->exp +=1;
     $user->save();
-    switch ($request->place) {
-      case 'main':
-      return redirect()->route('main.index');
-      break;
-      case 'view':
-      return redirect()->route('questions.index' , ['q_id' => $request->q_id]);
-      break;
-      case 'profile':
-      return redirect('profile');
-      break;
-      default:
-                    # code...
-      break;
-    }
-
+    $log = ActivityLog::create([
+      'user_id' => \Auth::user()->id,
+      'ans_id'  => $request->id , 
+      'vote'    => "up_vote"
+    ]);
   }
   else{
-    $answer->down_vote = 1;
+    $answer->down_vote += 1;
+    if($answer->up_vote > 0){
+      $answer->up_vote  -=1;
+    }
     $answer->save();
-
+    if($answer->down_vote == 10){
+      $answer->delete();
+      $user->exp -=10;   
+    }
+    $log = ActivityLog::create([
+      'user_id' => \Auth::user()->id,
+      'ans_id'  => $request->id, 
+      'vote'    => "down_vote"
+    ]);
   }
 }
 }

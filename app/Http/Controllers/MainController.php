@@ -7,6 +7,7 @@ use App\Question;
 use App\Answer;
 use Auth;
 use App\User;
+use App\ActivityLog;
 class MainController extends Controller
 {
 
@@ -42,14 +43,28 @@ class MainController extends Controller
         else
         {
             $this->expcalc();
+
             $pp = Auth::user()->profile_pic;
 
             $a = Answer::orderBy('up_vote' ,'desc')->get();
             $u = User::select('id' , 'name' , 'profile_pic' , 'role')->get();
-
-
             $q = Question::paginate('5');
-            return view('main' , compact( 'a','q' ,'u', 'pp'));
+
+            $log_u = Auth::user()->id;
+            $log = ActivityLog::where('user_id' , $log_u)->get();
+            if(!$log->count()){
+                $logs = ActivityLog::first();
+
+            }
+            else{ 
+                $logs = array();
+                $c =0;
+                foreach ($log as $key => $value) {
+                    $logs[] = $value["ans_id"];
+                }
+            }
+            
+            return view('main' , compact( 'a','q' ,'u', 'pp' , 'logs'));
         }
     }
     /**

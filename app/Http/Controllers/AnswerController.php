@@ -61,6 +61,7 @@ class AnswerController extends Controller
         'user_id' => \Auth::user()->id,
         'up_vote' => 0,
         'down_vote' => 0,
+         'created_Date' =>date('Y-m-d')
     ]);
        $user = Auth::user();
        $user->exp =+1;

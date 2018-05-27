@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Question;
 use App\Answer;
 use App\User;
-
+use App\ActivityLog;
 
 class QuestionController extends Controller
 {
@@ -24,13 +24,34 @@ class QuestionController extends Controller
 
     public function index(Request $request)
     {
+        //viewer count added
+        $VIEW = Question::where('q_id' , $request->q_id)->first();
+        $VIEW->viewer_count +=1;
+        $VIEW->save();
+
         $pp= \Auth::user()->profile_pic;
         $a = Answer::orderBy('up_vote','desc')->get();
         $q = Question::where('q_id' , $request->q_id)->paginate('1');
         $u = User::select('id' , 'name' , 'profile_pic' , 'role')->get();
 
 
-        return view('question' , compact('a' , 'q' , 'u' , 'pp'));
+
+
+         $log_u = \Auth::user()->id;
+            $log = ActivityLog::where('user_id' , $log_u)->get();
+             if(!$log->count()){
+                $logs = ActivityLog::first();
+               
+            }
+            else{ 
+            $logs = array();
+            $c =0;
+            foreach ($log as $key => $value) {
+                $logs[] = $value["ans_id"];
+            }
+           }
+
+        return view('question' , compact('a' , 'q' , 'u' , 'pp' , 'logs'));
     }
 
     /**
@@ -65,7 +86,8 @@ class QuestionController extends Controller
         'viewer_count' =>0,
         'count'   =>0,
         'total'   => 0,
-        'avg'     =>0
+        'avg'     =>0,
+        'created_Date' =>date('Y-m-d')
 
     ]);
        $place = $request->place;

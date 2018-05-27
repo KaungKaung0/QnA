@@ -8,7 +8,7 @@ class Answer extends Model
 {
     //
     protected $fillable = [
-    	'answer', 'q_id' , 'user_id' , 'up_vote' , 'down_vote'
+    	'answer', 'q_id' , 'user_id' , 'up_vote' , 'down_vote' , 'created_Date'
     ];
 
     protected $hidden = [
@@ -23,4 +23,5 @@ class Answer extends Model
     {
     	return $this->belongsTo('App\Question');
     }
+    public $timestamps = false;
 }

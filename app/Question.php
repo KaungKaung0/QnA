@@ -9,7 +9,7 @@ class Question extends Model
     //
 
     protected $fillable = [
-    	'question', 'q_id' , 'user_id' ,'viewer_count' ,'count' , 'total' , 'avg'
+    	'question', 'q_id' , 'user_id' ,'viewer_count' ,'count' , 'total' , 'avg' , 'created_Date'
     ];
 
     public function user()
@@ -22,5 +22,5 @@ class Question extends Model
         return $this->hasMany('App\Answer');
     }
 
-   
+   public $timestamps = false;
 }
