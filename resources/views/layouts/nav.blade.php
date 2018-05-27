@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg default-primary-color">
+<nav class="navbar fixed-top navbar-expand-lg default-primary-color">
  <!--  <a class="margin-fix navbar-brand text-primary-color" href="#"><img src="{{asset("img/Logo-Official.png")}}" width="120px" alt=""></a> -->
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="btn default-primary-color text-primary-color"><i class="fa fa-bars"></i></span>
@@ -10,27 +10,30 @@
 
     <form action="{{route('search')}}" method="get">
       {{csrf_field()}}
-      <input type="text" name="search" class="search-size" placeholder="Search...">
-      <button class="btn btn-control" type="submit"><div class="search-control"></div></button>
+      <input type="text" name="search" placeholder="Search..">
+      
     </form>
 
     <li class="nav-item">
       <a class="home_color" href="{{ route('main') }}">
         <div class="home_container">
-          <i class="fa fa-home"></i>
+          <i class="fa fa-home"><p class="res-home">Home</p></i>
         </div>
       </a>
     </li>
     <li class="nav-item">
       <a href="{{ route('profile') }}">
-        <div id="profilecontainer">
+        <div class="supercontainer">
+          <div id="profilecontainer">
 
-          @if(is_null($pp))
-          <img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="28px" height="28px">
-          @else
-          <img src="{{asset("img/$pp")}}" alt="" width="28px" height="28px">
+            @if(is_null($pp))
+            <img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="28px" height="28px">
+            @else
+            <img src="{{asset("img/$pp")}}" alt="" width="28px" height="28px">
 
-          @endif
+            @endif
+            <p class="res-profile"> My Profile</p>
+          </div>
         </div>
       </a>
     </li>
