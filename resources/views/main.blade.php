@@ -79,7 +79,7 @@
 
 						<div id="timedate">
 							<p><i class="fa fa-calendar"></i>{{$que->created_Date}} </p>
-							<p>count {{$que->viewer_count}}</p>
+							<p><i class="fa fa-eye"></i> {{$que->viewer_count}}</p>
 						</div>
 
 					</div>
