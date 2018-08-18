@@ -36,6 +36,8 @@
 								@endforeach
 								
 
+								
+								<p>{!!$que->question!!}</p>
 								<form action="{{route('qrate' , ['q_id' => $que->q_id])}}" method="POST">
 									{{csrf_field()}}
 
@@ -67,7 +69,6 @@
 									</fieldset>
 									<button type="submit"  id="rtsub">submit</button>
 								</form>
-								<p>{!!$que->question!!}</p>
 							</div>
 						</div>
 					</div>
@@ -130,7 +131,7 @@
 												</div>
 											</div>
 										</div>
-										{!!$ans->answer!!} <br>
+										{!!$ans->answer!!} 
 										@if(is_null($logs))
 										<iframe name="main" style="display: none;"></iframe>
 										<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
@@ -145,12 +146,12 @@
 										<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
 										@else
 										<iframe name="main" style="display: none;"></iframe>
-										<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
+										
 										<form action="{{route('ansrate' ,['place' => "view" , 'q_id' => $que->q_id])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})">
 											{{csrf_field()}}
 											<input type="hidden" name="id" value="{{$ans->id}}">
-											<button type="submit" class="btn btn-secondary btn-sm" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i></button>
-											<button type="submit" class="btn btn-secondary btn-sm" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i></button>
+											<button type="submit" class="btn btn-secondary btn-sm up-vote" name="up_vote" value="1"><i class="fa fa-thumbs-up"></i><p id="count{{$ans->id}}">{{$ans->up_vote}}</p></button>
+											<button type="submit" class="btn btn-secondary btn-sm down-vote" name="down_vote" value="1"><i class="fa fa-thumbs-down"></i><p id="count{{$ans->id}}">{{$ans->up_vote}}</p></button>
 										</form>
 										@endif
 										@endif

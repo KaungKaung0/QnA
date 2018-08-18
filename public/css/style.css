@@ -57,6 +57,7 @@
 #timedate{
 	background-color: #448aff;
 	width: 100%;
+	margin-top: 5px;
 }
 #timedate_table{
 	background-color: #448aff;
@@ -665,7 +666,29 @@ img{
 		color: #FF0800;
 	}
 
-	input[type=text] {
+	/* input[type=text] {
+		width: 130px;
+		height: 30px;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 2px;
+		font-size: 16px;
+		background-color: white;
+		background-image: url('mayykyilogoV_1.png');
+		background-position: 10px 7px; 
+		background-repeat: no-repeat;
+		padding: 12px 20px 12px 40px;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+		margin-right: 5px;
+		margin-bottom: 2px;
+	}
+	
+	input[type=text]:focus {
+		width: 100%;
+	} */
+
+	#search_bar{
 		width: 130px;
 		height: 30px;
 		box-sizing: border-box;
@@ -683,7 +706,7 @@ img{
 		margin-bottom: 2px;
 	}
 
-	input[type=text]:focus {
+	#search_bar:focus{
 		width: 100%;
 	}
 	.Ask_Container{
@@ -758,7 +781,7 @@ img{
 		color: #FF0800;
 	}
 
-	input[type=text] {
+	/* input[type=text] {
 		width: 130px;
 		height: 30px;
 		box-sizing: border-box;
@@ -774,11 +797,32 @@ img{
 		transition: width 0.4s ease-in-out;
 		margin-right: 5px;
 	}
-
+	
 	input[type=text]:focus {
 		width: 100%;
+	} */
+
+#search_bar{
+		width: 130px;
+		height: 30px;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 15px;
+		font-size: 16px;
+		background-color: white;
+		background-image: url('mayykyilogoV_1.png');
+		background-position: 10px 7px; 
+		background-repeat: no-repeat;
+		padding: 12px 20px 12px 40px;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+		margin-right: 5px;
+		margin-bottom: 2px;
 	}
 
+	#search_bar:focus{
+		width: 100%;
+	}
 	#profilecontainer{
 		border-radius: 100%;
 	}
@@ -966,7 +1010,27 @@ img{
 		}
 
 
+		.container{
+			margin-top: 50px
+		}
 
+		.container-special{
+			margin-top: 60px;
+		}
+
+
+		
+		.up-vote{
+			height: 60px;
+		}
+
+		.down-vote{
+			height: 60px;
+		}
+		
+		.white-space{
+			background-color: white;
+		}
 
 		
 		

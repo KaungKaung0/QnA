@@ -10,7 +10,7 @@
 
     <form action="{{route('search')}}" method="get">
       {{csrf_field()}}
-      <input type="text" name="search" placeholder="Search..">
+      <input id = "search_bar" type="text" name="search" placeholder="Search..">
       
     </form>
 
