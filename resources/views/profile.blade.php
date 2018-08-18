@@ -83,112 +83,115 @@
 										<hr>
 										<center>
 											<p class="text-left"><strong>Bio: </strong><br>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
-											<br>
-										</center>
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+												<br>
+											</center>
+										</div>
 									</div>
 								</div>
+
 							</div>
 
 						</div>
-
 					</div>
 				</div>
+			</div>
+
+			<div class="col-md-6">
+
+				@foreach($q as $que)
+
+				<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+					<div id="nyan_sin1">
+						<br>
+					</div>
+					<h4 class="white"><i class="fa fa-question-circle"></i>   Question</h4>
+					<div id="username">
+						<div class="row">
+
+							@foreach($u as $user)
+							@if($user->id == $que->user_id)
+							@php
+							$profile_pic=$user->profile_pic;
+							@endphp
+							<div id="profilephoto">
+								@if(is_null($profile_pic))
+								<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
+								@else
+								<img src="{{asset("img/$profile_pic")}}" alt="" width="50px" height="50px">
+								@endif
+							</div>
+							<div id="column">
+
+								<h3>{{$user->name}}</h3>
+								<h6>{{$user->role}}</h6>
+								<p>{!!$que->question!!}</p>
+							</div>
+							@endif
+							@endforeach	
+
+						</div>
+						<div id="content3">
+
+
+							<div id="timedate">
+								<p><i class="fa fa-calendar"></i>{{$que->created_Date}}</p>
+							</div>
+
+						</div>
+					</div>
+					<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
+					@foreach($a as $ans)		
+					@if($ans->q_id == $que->q_id)
+					<div id="username">
+						<div class="row">
+							@foreach($u as $user)
+							@if($user->id == $ans->user_id)
+							@php
+							$profile_pic = $user->profile_pic;
+							@endphp
+							<div id="profilephoto">
+								@if(is_null($profile_pic))
+								<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
+								@else
+								<img src="{{asset("img/$profile_pic")}}" alt="" width="50px" height="50px">
+								@endif
+							</div>
+							<div id="column">
+
+								<h3>{{$user->name}}</h3>
+								<h6>{{$user->role}}</h6>
+							</div>
+							@endif
+							@endforeach
+						</div>
+						<div id="content6">
+							<p>{!!$ans->answer!!}</p>
+						<!-- <button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
+						<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
+						<div id="timedate">
+							<p><i class="fa fa-calendar"></i>{{$ans->created_Date}}</p>
+						</div>
+					</div>
+
+					<a href="{{route('questions.index' , ['q_id' => $que->q_id])}}" class="btn btn-secondary btn-sm blah_button">Join</a>
+
+
+				</div>
+
+
+
+
+
+				@break
+				@endif
+				@endforeach
+				@endforeach
+				
+
 			</div>
 		</div>
-
-		<div class="col-md-6">
-
-			@foreach($q as $que)
-
-			<div id="box" class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-				<div id="nyan_sin1">
-					<br>
-				</div>
-				<h4 class="white"><i class="fa fa-question-circle"></i>   Question</h4>
-				<div id="username">
-					<div class="row">
-
-						@foreach($u as $user)
-						@if($user->id == $que->user_id)
-						@php
-						$profile_pic=$user->profile_pic;
-						@endphp
-						<div id="profilephoto">
-							@if(is_null($profile_pic))
-							<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
-							@else
-							<img src="{{asset("img/$profile_pic")}}" alt="" width="50px" height="50px">
-							@endif
-						</div>
-						<div id="column">
-
-							<h3>{{$user->name}}</h3>
-							<h6>{{$user->role}}</h6>
-							<p>{!!$que->question!!}</p>
-						</div>
-						@endif
-						@endforeach	
-						
-					</div>
-					<div id="content3">
-						
-
-						<div id="timedate">
-							<p><i class="fa fa-calendar"></i>{{$que->created_Date}}</p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-			
-			<h4 class="white"><i class="fa fa-lightbulb-o"></i>   Top Rated Answer</h4>
-			@foreach($a as $ans)		
-			@if($ans->q_id == $que->q_id)
-			<div id="username">
-				<div class="row">
-					@foreach($u as $user)
-					@if($user->id == $ans->user_id)
-					@php
-					$profile_pic = $user->profile_pic;
-					@endphp
-					<div id="profilephoto">
-						@if(is_null($profile_pic))
-						<img src="http://www.gravatar.com/avatar/ade014a130559a4e4691e1267cc3433c.jpg?s=80&amp;d=mm&amp;r=g" alt="" width="50px" height="50px">
-						@else
-						<img src="{{asset("img/$profile_pic")}}" alt="" width="50px" height="50px">
-						@endif
-					</div>
-					<div id="column">
-
-						<h3>{{$user->name}}</h3>
-						<h6>{{$user->role}}</h6>
-					</div>
-					@endif
-					@endforeach
-				</div>
-				<div id="content6">
-					<p>{!!$ans->answer!!}</p>
-						<!-- <button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-up"></i></button>
-							<button  class="btn btn-secondary btn-sm"><i class="fa fa-thumbs-down"></i></button> -->
-							<div id="timedate">
-								<p><i class="fa fa-calendar"></i>{{$ans->created_Date}}</p>
-							</div>
-						</div>
-
-						<a href="{{route('questions.index' , ['q_id' => $que->q_id])}}" class="btn btn-secondary btn-sm blah_button">Join</a>
+	</div>
 
 
-
-						@break
-						@endif
-						@endforeach
-						@endforeach
-
-
-					</div>
-				</div>
-			</div>
-
-
-			@endsection 
+	@endsection 

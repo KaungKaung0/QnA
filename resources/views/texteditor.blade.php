@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div id="container">
+<div class="container-special">
 	<div id="box">
 		<div id="nyan_sin1">
 			<br>
