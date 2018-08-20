@@ -112,41 +112,7 @@
 						<p>{!!$ans->answer!!}</p>
 					</div>
 					<div id="content6">
-						@if(is_null($logs))
-						<iframe name="main" style="display: none;"></iframe>
-						<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
-						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})" name="ansvote">
-							{{csrf_field()}}
-							<input type="hidden" name="id" value="{{$ans->id}}">
-							<div class="upvote_system">
-								<div class="row">
-									<button type="submit" class="btn btn-upvote btn-sm" name="up_vote" value="1"><i class="fa fa-angle-double-up"></i></button>
-									
-									<button type="submit" class="btn btn-upvote btn-sm" name="down_vote" value="1"><i class="fa fa-angle-double-down"></i></button>
-								</div>
-							</div>
-						</form>
-						@else
-						
-						@if(in_array($ans->id, $logs))
-							<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
-					
-						@else
-							<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
-						<iframe name="main" style="display: none;"></iframe>
-						<form action="{{route('ansrate' , ['place' => "main"])}}" method="POST" id="{{$ans->id}}" target="main" onsubmit="thanks({{$ans->id}})" name="ansvote">
-							{{csrf_field()}}
-							<input type="hidden" name="id" value="{{$ans->id}}">
-							<div class="upvote_system">
-								<div class="row">
-									<button type="submit" class="btn btn-upvote btn-sm" name="up_vote" value="1"><i class="fa fa-angle-double-up"></i></button>
-									
-									<button type="submit" class="btn btn-upvote btn-sm" name="down_vote" value="1"><i class="fa fa-angle-double-down"></i></button>
-								</div>
-							</div>
-						</form>
-						@endif
-						@endif
+			<p><i class="fa fa-thumbs-up"></i>{{$ans->up_vote}}</p>
 						
 						<div id="timedate">
 							<p><i class="fa fa-calendar"></i>{{$ans->created_Date}}</p>

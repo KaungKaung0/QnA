@@ -23,15 +23,26 @@ function thanks(id){
     num +=1;
   else if(Clicked == 'down_vote'){
     if(num > 0)
-    num -=1;
-}
+      num -=1;
+  }
   $("#count"+id).text(num)
 };
 
 
 $(document).ready(function(){
  new WOW().init();
- $('#summernote').summernote();
+ $('#summernote').summernote({
+   popover: {
+     toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontsize', ['fontsize']],
+    ]
+  }
+ 
+  });
+
  $(document).on('change', '.btn-file :file', function() {
   var input = $(this),
   label = input.val().replace(/\\/g, '/').replace(/.*\//, '');

@@ -27,7 +27,7 @@ class QuestionController extends Controller
         $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
 
         if(!$pageWasRefreshed ) {
-        
+            
         //viewer count added
         $VIEW = Question::where('q_id' , $request->q_id)->first();
         $VIEW->viewer_count +=1;
@@ -56,7 +56,6 @@ class QuestionController extends Controller
                 $logs[] = $value["ans_id"];
             }
         }
-
         return view('question' , compact('a' , 'q' , 'u' , 'pp' , 'logs'));
     }
 

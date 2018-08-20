@@ -6,6 +6,7 @@
 </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <h1>Mayy Kyi </h1>
   <ul class="navbar-nav mr-right">
 
     <form action="{{route('search')}}" method="get">

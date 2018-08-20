@@ -36,8 +36,9 @@
 								@endforeach
 								
 
-								
+							
 								<p>{!!$que->question!!}</p>
+
 								<form action="{{route('qrate' , ['q_id' => $que->q_id])}}" method="POST">
 									{{csrf_field()}}
 
@@ -77,7 +78,8 @@
 
 						<div id="timedate">
 							<p><i class="fa fa-calendar"></i>{{$que->created_Date}} </p>
-							<p>count {{$que->viewer_count}}</p>
+								<p>{{$que->status}}</p>
+							<p><i class="fa fa-eye"></i> {{$que->viewer_count}}</p>
 						</div>
 
 					</div>
@@ -143,7 +145,7 @@
 										</form>
 										@else
 										@if(in_array($ans->id, $logs))
-										<p id="count{{$ans->id}}">{{$ans->up_vote}}</p>
+										<p id="count{{$ans->id}}"><i class="fa fa-thumbs-up"></i>{{$ans->up_vote}}</p>
 										@else
 										<iframe name="main" style="display: none;"></iframe>
 										
@@ -176,7 +178,7 @@
 				@endforeach
 			</div>
 		</div>
-		<div class="col-md-3 col-sm-off">
+		{{-- <div class="col-md-3 col-sm-off">
 			<div class="box_2 wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms"">
 				<div id="nyan_sin1">
 					<br>
@@ -196,7 +198,7 @@
 					<br>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	</div>
 </div>	
 @endsection
