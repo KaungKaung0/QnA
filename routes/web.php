@@ -12,7 +12,7 @@
 */
 Auth::routes();
 
-Route::get('/home', 'MainController@index') -> name('main');
+Route::get('/home', 'TestController@index') -> name('test');
 Route::get('/', 'MainController@index') -> name('main');
 
 //Acc Confirmation

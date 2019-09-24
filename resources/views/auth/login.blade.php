@@ -2,6 +2,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <p style="text-align: center; font-size: 26px; font-weight: bold; color: red">This website is developed by Kaung Min Khant(3KaTha-6), Paing Hein Htet(3KaTha-4), Soe Htet San(3KaTha-5), Thar Htet Zan(3KaTha-8) and Su Sandy Min(3KaTha-7)...</p>
     <div class="row justify-content-center ">
         <div class="col-md-5 col-xs-12">
             <div  id = "login_shadow" class="card card-default">
